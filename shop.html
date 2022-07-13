@@ -8,7 +8,7 @@
     <meta content="" name="keywords">
     <meta content="" name="description">
     <meta content="category" name="page-type">
-    <meta content="category-name" name="all">
+    <meta content="all" name="category-name">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -131,20 +131,20 @@
                                 <a href="" class="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div>-->
-                        <a href="shop.html" class="nav-item nav-link">Shirts</a>
+                        <a href="shop.html?category=shirts" id="category-shirts-link" class="nav-item nav-link">Shirts</a>
                         <!--<a href="" class="nav-item nav-link">Jeans</a>
                         <a href="" class="nav-item nav-link">Swimwear</a>
                         <a href="" class="nav-item nav-link">Sleepwear</a>
                         <a href="" class="nav-item nav-link">Sportswear</a>
                         <a href="" class="nav-item nav-link">Jumpsuits</a>
                         <a href="" class="nav-item nav-link">Blazers</a>-->
-                        <a href="shop.html" class="nav-item nav-link">Bags</a>
-                        <a href="shop.html" class="nav-item nav-link">Shoes</a>
+                        <a href="shop.html?category=bags" id="category-bags-link" class="nav-item nav-link">Bags</a>
+                        <a href="shop.html?category=shoes" id="category-shoes-link" class="nav-item nav-link">Shoes</a>
                     </div>
                 </nav>
             </div>
             <div class="col-lg-9">
-                <nav class="main-menu navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <nav class="main-menu-bar navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">JF</span>Shop</h1>
                     </a>
@@ -152,9 +152,9 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                        <div class="navbar-nav mr-auto py-0">
-                            <a href="index.html" class="nav-item nav-link">Home</a>
-                            <a href="shop.html" class="nav-item nav-link active">Shop</a>
+                        <div class="main-menu navbar-nav mr-auto py-0">
+                            <a id="main-menu-home" href="index.html" class="nav-item nav-link active">Home</a>
+                            <a id="main-menu-shop" href="shop.html" class="nav-item nav-link">Shop</a>
                             <!--<a href="detail.html" class="nav-item nav-link">Shop Detail</a>-->
                             <!--<div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
@@ -163,7 +163,7 @@
                                     <a href="checkout.html" class="dropdown-item">Checkout</a>
                                 </div>
                             </div>-->
-                            <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            <a id="main-menu-contact" href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="account-links navbar-nav ml-auto py-0">
                             <a href="#" id="login-link" class="nav-item nav-link">Login</a>
