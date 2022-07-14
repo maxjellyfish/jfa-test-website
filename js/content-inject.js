@@ -26,6 +26,9 @@ export default function () {
     case 'product-detail':
       initPDP()
       break
+    case 'cart':
+      initCart()
+      break;
     default:
       console.log("content-inject.js: unknown page type")
       break
@@ -74,11 +77,10 @@ export default function () {
     const prods = catData ? db.products.filter(prod => prod.categoryId === catData.id) : db.products
     $(".product-listing .product-tile").remove()
     prods.map(prod => getProductTile(prod)).reverse().forEach( item =>  item.insertAfter(".product-list-controls"))
-
   }
 
   function getProductTile(prod) {
-    return $(/*html */`
+    const item = $(/*html */`
           <div data-product-id="${prod.id}" class="product-tile col-lg-4 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
                 <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -92,12 +94,17 @@ export default function () {
                 </div>
                 <div class="card-footer d-flex justify-content-between bg-light border">
                     <a href="detail.html?product-id=${prod.id}" title="Colorful Stylish Shirt" class="product-link btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <a href="cart.html" class="add-to-cart-link btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                    <button class="add-to-cart-link btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
                 </div>
             </div>
-        </div>
+        </div>`)
 
-      `)
+    item.find(".add-to-cart-link").on("click", e => {
+      alert(`Added ${prod.name} to cart!`)
+      addToCart(prod)
+    })
+
+    return item
   }
 
   function initPDP() {
@@ -120,7 +127,122 @@ export default function () {
     // Update price
     $(".product-price").text(`$${prod.price}.00`)
 
+    // Init add to cart
+    $(".add-to-cart-link").on("click", e => {
+      alert(`Added ${prod.name} to cart!`)
+      addToCart(prod)
+    })
+
   }
+
+  function addToCart(prod){
+    
+    let cart = localStorage.getItem("user-cart")
+    cart = cart ? JSON.parse(cart) : []
+
+    let lineItem = cart.find(item => item.id === prod.id)
+    if(!lineItem){
+      lineItem = {...prod, qty: 0}
+      cart.push(lineItem)
+    }
+
+    lineItem.qty++
+
+    localStorage.setItem('user-cart', JSON.stringify(cart))
+  }
+
+  function removeFromCart(prodId, entirely = false){
+
+    let cart = localStorage.getItem("user-cart")
+    cart = cart ? JSON.parse(cart) : []
+
+    let lineItem = cart.find(item => item.id === prodId)
+    if(!lineItem) return false
+
+
+    let removed = false
+
+    lineItem.qty--
+    if(lineItem.qty <= 0 || entirely){
+      cart = cart.filter(item => item.id !== prodId)
+      removed = true
+    }
+
+    localStorage.setItem('user-cart', JSON.stringify(cart))
+
+    return removed
+  }
+
+  function initCart(){
+    let cart = localStorage.getItem("user-cart")
+    cart = cart ? JSON.parse(cart) : []
+
+    // Product list
+    const container = $(".product-table tbody")
+    container.empty()
+    if(cart.length) container.append(cart.map(item => getCartLineItem(item)))
+    else  container.append($(`<tr><td colspan="5">Nothing in cart</td></tr>`))
+
+    // Summary
+    let subtotal = 0
+    cart.forEach(item => {
+      subtotal += (item.price * item.qty)
+    })
+
+    const subtotalEl = $(".cart-subtotal")
+    subtotalEl.text(`$${subtotal}.00`)
+
+    const totalEl = $(".cart-total")
+    totalEl.text(`$${subtotal + 10}.00`)
+    
+
+  }
+
+  function getCartLineItem(prod){
+    const item = $(/*html */`<tr>
+          <td class="align-middle"><img src="${prod.img}" alt="" style="width: 50px;"> ${prod.name}</td>
+          <td class="align-middle">$${prod.price}.00</td>
+          <td class="align-middle">
+              <div class="input-group quantity mx-auto" style="width: 100px;">
+                  <div class="input-group-btn">
+                      <button class="btn btn-sm btn-primary btn-minus">
+                      <i class="fa fa-minus"></i>
+                      </button>
+                  </div>
+                  <input type="text" class="form-control form-control-sm bg-secondary text-center" value="${prod.qty}">
+                  <div class="input-group-btn">
+                      <button class="btn btn-sm btn-primary btn-plus">
+                          <i class="fa fa-plus"></i>
+                      </button>
+                  </div>
+              </div>
+          </td>
+          <td class="align-middle">$${prod.price * prod.qty}.00</td>
+          <td class="align-middle"><button class="btn-remove btn btn-sm btn-primary"><i class="fa fa-times"></i></button></td>
+      </tr>`)
+
+    const remove = item.find(".btn-remove")
+    remove.on("click", e => {
+      removeFromCart(prod.id, true)
+      initCart()
+    })
+
+    const plus = item.find(".btn-plus")
+    plus.on("click", e => {
+      addToCart(prod)
+      initCart()
+    })
+
+    const minus = item.find(".btn-minus")
+    minus.on("click", e => {
+      removeFromCart(prod.id)
+      initCart()
+    })
+
+
+    return item
+  }
+
 
   function initCommon() {
 
