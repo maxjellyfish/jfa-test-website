@@ -41,7 +41,7 @@
         return ob;
     }
 
-    var addClickLinkData = function(ob, target) {
+    var addEventDataClickLink = function(ob, target) {
         var domain = (new URL(target.href));
         ob["link_domain"] = domain.hostname;
         ob["link_url"] = target.href;
@@ -52,6 +52,68 @@
 
     if(window.dl == 1) {
 
+        // <--- VIDEO ACTIONS START --->
+
+        var player;
+
+        function onPlayerStateChange(e) {
+            var playerStatus = e.data;
+            var event;
+            var ob = createEventData("tbc");
+            var videoData = player.getVideoData();
+            ob["video_current_time"] = player.getCurrentTime();
+            ob["video_duration"] = player.getDuration();
+            ob["video_percent"] = Math.round((player.getCurrentTime()/player.getDuration()*100))
+            ob["video_provider"] = "youtube";
+            ob["video_title"] = videoData.title;
+            ob["video_url"] = player.getVideoUrl();
+            ob["visible"] = undefined;
+
+            if (playerStatus == -1) {
+                // unstarted
+            } else if (playerStatus == 0) {
+                // ended
+                event = "video_complete";
+            } else if (playerStatus == 1) {
+                // playing
+                event = "video_start";
+            } else if (playerStatus == 2) {
+                // paused
+                event = "video_pause";
+            } else if (playerStatus == 3) {
+                // buffering
+            } else if (playerStatus == 5) {
+                // video cued
+            }
+
+            if(event){
+                ob["event"] = event;
+                dataLayer.push(ob);
+            }
+
+        }
+        
+        function onPlayerReady(event) {
+            console.log("onPlayerReady", event)
+            //event.target.playVideo();
+        }
+
+        window.onYouTubeIframeAPIReady = function() {
+            player = new YT.Player('video-target', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        var tag = document.createElement('script');
+        tag.id = 'iframe-api';
+        tag.src = 'https://www.youtube.com/iframe_api';
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // <--- VIDEO ACTIONS END --->
 
         // <--- COMMON ACTIONS START --->
 
@@ -64,21 +126,21 @@
         // event: click_social
         $(".social-link").click(function(event){
             var ob = createEventData("click_social");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
             dataLayer.push(ob);
         });
 
         // event: click_footer
-        $(".footer .quick-links").click(function(event){
+        $(".footer .quick-links a").click(function(event){
             var ob = createEventData("click_footer");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
             dataLayer.push(ob);
         });
 
         // event: click_cart
         $("#view-cart").click(function(event){
             var ob = createEventData("click_cart");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
             ob["event_context"] = "header";
             dataLayer.push(ob);
         });
@@ -88,7 +150,7 @@
         $(".hero-carousel .carousel-item a").click(function(event){
 
             var ob = createEventData("view_promotion");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
 
             ob["ecommerce"] = {
                 "currency": currency,
@@ -109,7 +171,7 @@
         $(".hero-carousel .carousel-item a").click(function(event){
 
             var ob = createEventData("select_promotion");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
 
             ob["ecommerce"] = {
                 "currency": currency,
@@ -130,7 +192,7 @@
         $(".promotion-tiles a").click(function(event){
 
             var ob = createEventData("select_promotion");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
 
             ob["ecommerce"] = {
                 "currency": currency,
@@ -185,7 +247,7 @@
         $(".sort-menu a").click(function(event){
 
             var ob = createEventData("click_sort");
-            addClickLinkData(ob, this);
+            addEventDataClickLink(ob, this);
             ob["name"] = $(this).text().toLowerCase(),
             ob["type"] = "product";
             dataLayer.push(ob);
