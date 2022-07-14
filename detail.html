@@ -25,27 +25,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript">
-        window.params = new Proxy(new URLSearchParams(window.location.search), {
-          get: (searchParams, prop) => searchParams.get(prop),
-        });
-        window.gtmId = 'GTM-XXXXXX';
-        (function(){
-            if(window.params && typeof window.params.gtmId != 'undefined' && window.params.gtmId && window.params.gtmId !='null') {
-                window.gtmId = window.params.gtmId;
-                localStorage.setItem("gtmId", window.gtmId);
-            } else if(localStorage && localStorage.getItem("gtmId")){
-                window.gtmId = localStorage.getItem("gtmId");
-            }
-        })();
-    </script>
-    <!-- Google Tag Manager GTM-TTGJ67N -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer',window.gtmId);</script>
-    <!-- End Google Tag Manager -->
+    <script src="js/gtm-loader.js"></script>
 </head>
 
 <body>
@@ -104,7 +84,7 @@
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a> -->
-                <a href="javascript:void(0)" id="view-cart" class="cart-link btn border">
+                <a href="cart.html" id="view-cart" class="cart-link btn border" title="View Cart">
                     <i class="fas fa-shopping-cart text-primary"></i>
                     <span class="badge"></span>
                 </a>
@@ -180,7 +160,7 @@
     <!-- Page Header Start -->
     <div class="container-fluid bg-secondary mb-5">
         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
-            <h1 class="font-weight-semi-bold text-uppercase mb-3">Product Detail</h1>
+            <h1 id="page-title" class="font-weight-semi-bold text-uppercase mb-3">Product Detail</h1>
             <div class="breadcrumb-links d-inline-flex">
                 <p class="m-0"><a href="index.html">Home</a></p>
                 <p class="m-0 px-2">-</p>
@@ -229,9 +209,9 @@
                         <small class="fas fa-star-half-alt"></small>
                         <small class="far fa-star"></small>
                     </div>
-                    <small class="pt-1">(50 Reviews)</small>
+                    <small class="pt-1">(1 Review)</small>
                 </div>
-                <h3 class="font-weight-semi-bold mb-4">$150.00</h3>
+                <h3 class="product-price font-weight-semi-bold mb-4">$150.00</h3>
                 <p class="mb-4">Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat diam stet sit clita ea. Sanc invidunt ipsum et, labore clita lorem magna lorem ut. Erat lorem duo dolor no sea nonumy. Accus labore stet, est lorem sit diam sea et justo, amet at lorem et eirmod ipsum diam et rebum kasd rebum.</p>
                 <div class="d-flex mb-3">
                     <p class="text-dark font-weight-medium mb-0 mr-3">Sizes:</p>
@@ -297,7 +277,7 @@
                             </button>
                         </div>
                     </div>
-                    <button class="cta-btn btn btn-primary px-3"><i class="add-to-cart-link fa fa-shopping-cart mr-1"></i> Add To Cart</button>
+                    <a href="cart.html" class="add-to-cart-link cta-btn btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> Add To Cart</a>
                 </div>
                 <div class="d-flex pt-2">
                     <p class="text-dark font-weight-medium mb-0 mr-2">Share on:</p>
@@ -323,7 +303,7 @@
                 <div class="nav nav-tabs justify-content-center border-secondary mb-4">
                     <a class="nav-item nav-link active" data-toggle="tab" href="#tab-pane-1">Description</a>
                     <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-2">Information</a>
-                    <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (0)</a>
+                    <a class="nav-item nav-link" data-toggle="tab" href="#tab-pane-3">Reviews (1)</a>
                 </div>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="tab-pane-1">
@@ -404,18 +384,18 @@
                                 <form>
                                     <div class="form-group">
                                         <label for="message">Your Review *</label>
-                                        <textarea id="message" cols="30" rows="5" class="form-control"></textarea>
+                                        <textarea id="message" cols="30" rows="5" class="form-control" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="name">Your Name *</label>
-                                        <input type="text" class="form-control" id="name">
+                                        <input type="text" class="form-control" id="name"  required>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Your Email *</label>
-                                        <input type="email" class="form-control" id="email">
+                                        <input type="email" class="form-control" id="email"  required>
                                     </div>
                                     <div class="form-group mb-0">
-                                        <input type="submit" value="Leave Your Review" class="btn btn-primary px-3">
+                                        <input type="submit" value="Leave Your Review"  required class="btn btn-primary px-3">
                                     </div>
                                 </form>
                             </div>

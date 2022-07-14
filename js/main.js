@@ -1,4 +1,4 @@
-import "./content-inject.js"
+import contentInit from "./content-inject.js"
 
 (function ($) {
     "use strict";
@@ -104,3 +104,4 @@ import "./content-inject.js"
     
 })(jQuery);
 
+contentInit()

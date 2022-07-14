@@ -1,6 +1,8 @@
 (function ($) {
     "use strict";
 
+    window.dataLayer = window.dataLayer || []
+
     window.dl = 1;
     if(window.params && typeof window.params.dl != 'undefined' && window.params.dl && window.params.dl !='null') {
         window.dl = window.params.dl;

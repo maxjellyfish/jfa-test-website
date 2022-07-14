@@ -24,27 +24,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript">
-        window.params = new Proxy(new URLSearchParams(window.location.search), {
-          get: (searchParams, prop) => searchParams.get(prop),
-        });
-        window.gtmId = 'GTM-XXXXXX';
-        (function(){
-            if(window.params && typeof window.params.gtmId != 'undefined' && window.params.gtmId && window.params.gtmId !='null') {
-                window.gtmId = window.params.gtmId;
-                localStorage.setItem("gtmId", window.gtmId);
-            } else if(localStorage && localStorage.getItem("gtmId")){
-                window.gtmId = localStorage.getItem("gtmId");
-            }
-        })();
-    </script>
-    <!-- Google Tag Manager GTM-TTGJ67N -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer',window.gtmId);</script>
-    <!-- End Google Tag Manager -->
+    
+    <script src="js/gtm-loader.js"></script>
+
 </head>
 
 <body>
@@ -103,7 +85,7 @@
                     <i class="fas fa-heart text-primary"></i>
                     <span class="badge">0</span>
                 </a> -->
-                <a href="javascript:void(0)" id="view-cart" class="cart-link btn border">
+                <a href="cart.html" id="view-cart" class="cart-link btn border" title="View Cart">
                     <i class="fas fa-shopping-cart text-primary"></i>
                     <span class="badge"></span>
                 </a>
@@ -245,8 +227,8 @@
     <!-- Categories Start -->
     <div class="category-tiles container-fluid pt-5">
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-4 col-md-6 pb-1">
-                <div class="tile cat-item d-flex flex-column border mb-4" style="padding: 30px;">
+            <div class="tile col-lg-4 col-md-6 pb-1">
+                <div class="cat-item d-flex flex-column border mb-4" style="padding: 30px;">
                     <p class="text-right">15 Products</p>
                     <a href="shop.html?category=shirts" title="Shirts" data-type="category" class="cat-img position-relative overflow-hidden mb-3">
                         <img class="img-fluid" src="img/cat-1.jpg" alt="">

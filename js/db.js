@@ -1,4 +1,21 @@
-export default {
+const data = {
+  nav:[
+    {
+      pageType:"home",
+      name: "Home",
+      url: "index.html"
+    },
+    {
+      pageType:"category",
+      name: "Shop",
+      url: "shop.html"
+    },
+    {
+      pageType:"contact",
+      name: "Contact",
+      url: "contact.html"
+    },
+  ],
   categories: [
     {
       id: "shirts",
@@ -20,6 +37,7 @@ export default {
     {
       id:"shirts-1",
       name: "Colourful Stylish Shirt",
+      categoryId: 'shirts',
       img: "img/product-1.jpg",
       price: 123,
       originalPrice: 150
@@ -27,6 +45,7 @@ export default {
     {
       id:"bags-1",
       name: "Colourful Stylish Bag",
+      categoryId: 'bags',
       img: "img/product-2.jpg",
       price: 234,
       originalPrice: 470
@@ -34,9 +53,23 @@ export default {
     {
       id:"shoes-1",
       name: "Colourful Stylish Shoes",
+      categoryId: 'shoes',
       img: "img/product-3.jpg",
       price: 80,
       originalPrice: 90
     },
   ]
 }
+
+// Some helpful meta
+data.products.forEach(prod => {
+
+  const cat = data.categories.find(cat => cat.id == prod.categoryId)
+  if(cat){
+    cat.productCount = cat.productCount || 0
+    cat.productCount++
+  }
+
+})
+
+export default data
