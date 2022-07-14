@@ -67,7 +67,7 @@
         });
 
         // event: click_footer
-        $(".footer .quick-links").click(function(event){
+        $(".footer .quick-links a").click(function(event){
             var ob = createEventData("click_footer");
             addClickLinkData(ob, this);
             dataLayer.push(ob);
