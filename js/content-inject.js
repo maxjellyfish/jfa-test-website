@@ -4,6 +4,7 @@ export default function () {
 
   const urlParams = new URLSearchParams(document.location.search)
   const pageType = $('meta[name="page-type"]').attr('content')
+
   initCommon()
 
   switch (pageType) {
@@ -71,10 +72,10 @@ export default function () {
     // Prod tiles
     const prods = catData ? db.products.filter(prod => prod.categoryId === catData.id) : db.products
     $(".product-listing .product-tile").remove()
-    prods.map(prod => getProductTile(prod)).reverse().forEach( item =>  item.insertAfter(".product-list-controls"))
+    prods.map((prod, index) => getProductTile(prod, "category-"+catPageId, index)).reverse().forEach( item =>  item.insertAfter(".product-list-controls"))
   }
 
-  function getProductTile(prod) {
+  function getProductTile(prod, listname, index) {
     const item = $(/*html */`
           <div data-product-id="${prod.id}" class="product-tile col-lg-4 col-md-6 col-sm-12 pb-1">
             <div class="card product-item border-0 mb-4">
@@ -88,7 +89,7 @@ export default function () {
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a href="detail.html?product-id=${prod.id}" title="Colorful Stylish Shirt" class="product-link btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <a data-product-id="${prod.id}" data-listname="${listname}" data-index="${index}" href="detail.html?product-id=${prod.id}" title="Colorful Stylish Shirt" class="product-link btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
                     <button class="add-to-cart-link btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
                 </div>
             </div>
@@ -144,6 +145,10 @@ export default function () {
     lineItem.qty++
 
     localStorage.setItem('user-cart', JSON.stringify(cart))
+
+    if(window.eventHooks && typeof window.eventHooks["addToCart"] != 'undefined') {
+      window.eventHooks["addToCart"](prod);
+    }
   }
 
   function removeFromCart(prodId, entirely = false){

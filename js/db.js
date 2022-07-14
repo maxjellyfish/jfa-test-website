@@ -40,7 +40,8 @@ const data = {
       categoryId: 'shirts',
       img: "img/product-1.jpg",
       price: 123,
-      originalPrice: 150
+      originalPrice: 150,
+      brand : 'jellyfish'
     },
     {
       id:"bags-1",
@@ -48,7 +49,8 @@ const data = {
       categoryId: 'bags',
       img: "img/product-2.jpg",
       price: 234,
-      originalPrice: 470
+      originalPrice: 470,
+      brand : 'jellyfish'
     },
     {
       id:"shoes-1",
@@ -56,7 +58,8 @@ const data = {
       categoryId: 'shoes',
       img: "img/product-3.jpg",
       price: 80,
-      originalPrice: 90
+      originalPrice: 90,
+      brand : 'jellyfish'
     },
   ]
 }
