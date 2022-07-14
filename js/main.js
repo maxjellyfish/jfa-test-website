@@ -1,3 +1,5 @@
+import "./content-inject.js"
+
 (function ($) {
     "use strict";
     
