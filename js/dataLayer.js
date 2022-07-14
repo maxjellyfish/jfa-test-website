@@ -1,3 +1,8 @@
+import db from "./db.js"
+//db.products.find(prod => prod.id == paramId)
+
+// data-interval="false"
+
 (function ($) {
     "use strict";
 

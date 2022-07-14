@@ -3,14 +3,7 @@ import db from "./db.js"
 export default function () {
 
   const urlParams = new URLSearchParams(document.location.search)
-
-
   const pageType = $('meta[name="page-type"]').attr('content')
-  if (!pageType) {
-    console.log("content-inject.js: could not determine page type")
-    return
-  }
-
   initCommon()
 
   switch (pageType) {
@@ -30,9 +23,11 @@ export default function () {
       initCart()
       break;
     default:
-      console.log("content-inject.js: unknown page type")
+      console.log("content-inject.js: unknown page type", pageType)
       break
   }
+
+  ////////////////////////////////////
 
   function initHome() {
 
