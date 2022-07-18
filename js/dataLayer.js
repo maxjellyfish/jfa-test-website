@@ -77,10 +77,14 @@ import db from "./db.js"
     }
 
     var addEventDataClickLink = function(ob, target) {
-        var domain = (new URL(target.href));
-        ob["link_domain"] = domain.hostname;
-        ob["link_url"] = target.href;
-        ob["element_id"] = target.id
+        var domain;
+        if(typeof target.href != 'undefined') {
+            domain = (new URL(target.href));
+        }
+        
+        ob["link_domain"] = domain
+        ob["link_url"] = typeof target.href != 'undefined' ? target.href : undefined;
+        ob["element_id"] = typeof target.id != 'undefined' ? target.id : undefined;
         ob["element_text"] = $(target).text();
         return ob;
     }
@@ -241,6 +245,21 @@ import db from "./db.js"
         return false;
     });
 
+    // event: click_phone
+    $('a[href*="tel:"]').click(function(event){
+        var ob = createEventData("click_phone");
+        addEventDataClickLink(ob, this);
+        track(ob);
+    });
+
+    // event: click_email
+    $('a[href*="mailto:"]').click(function(event){
+        var ob = createEventData("click_email");
+        addEventDataClickLink(ob, this);
+        track(ob);
+    });
+
+
     // <--- COMMON ACTIONS END --->
 
     // <--- HOME ACTIONS START --->
@@ -400,6 +419,37 @@ import db from "./db.js"
             track(ob);
         }
     });
+
+
+    $(".filters form").each(function(event){
+        $(this).change(function(event){
+            var values = [];
+            var target = event.target;
+            var targetValue;
+            var targetName;
+
+            $(this).find($("input:checked")).each(function(){
+                var text = $(this).parent().find("label").text();
+                values.push(text);
+                if(this == target) {
+                    targetValue = text;
+                    targetName = $(this).attr("data-filter-name")
+                }
+            });
+
+            if(targetValue) {
+
+                var ob = createEventData("click_filter");
+                ob["filter_category"] = 'product';
+                ob["filter_name"] = targetName;
+                ob["filter_value"] = targetValue;
+                ob["filter_active_values"] = values.join(';');
+
+                addEventDataClickLink(ob, this);
+                track(ob);
+            }
+        });
+    })
 
     // <--- CATEGORY ACTIONS END --->
 
