@@ -85,12 +85,67 @@ import db from "./db.js"
         return ob;
     }
 
+
+    var addCartData = function(ob){
+
+        var cart = localStorage.getItem("user-cart")
+        cart = cart ? JSON.parse(cart) : [];
+
+        var items = [];
+        var total = 0;
+        for(var i=0; i<cart.length; i++){
+            items.push({
+                "item_brand": cart[i].brand,
+                "item_category": cart[i].categoryId,
+                "item_id": cart[i].id,
+                "item_name": cart[i].name,
+                //"item_variant": "item_variant",
+                "price": cart[i].price,
+                "item_original_price" : cart[i].originalPrice,
+                "quantity": "quantity",
+                "item_img" : cart[i].img
+            });
+            total += (cart[i].price * cart[i].qty);
+        }
+
+        ob.ecommerce = typeof ob.ecommerce != 'undefined' ? ob.ecommerce : {};
+        ob.ecommerce.value = typeof ob.ecommerce.value != 'undefined' ? ob.ecommerce.value : 0;
+        ob.ecommerce.items = typeof ob.ecommerce.items != 'undefined' ? ob.ecommerce.items : [];
+
+        ob.ecommerce.value = total;
+        ob.ecommerce.items = items;
+    }
+
     // event hooks 
     window.eventHooks = window.eventHooks || {};
 
     window.eventHooks["addToCart"] = function(product) {
         //console.log("eventHooks", product);
         var ob = createEventData("add_to_cart");
+        ob['ecommerce'] = {
+            "currency": currency,
+            "value": product.price,
+            "items": [
+                {
+                    "item_brand": product.brand,
+                    "item_category": product.categoryId,
+                    "item_id": product.id,
+                    "item_name": product.name,
+                    //"item_variant": "item_variant",
+                    "price": product.price,
+                    "item_original_price" : product.originalPrice,
+                    "quantity": (typeof product.qty == 'undefined' && product.qty > 0 ? product.qty : 1),
+                    "item_img" : product.img
+
+                }
+            ]
+        }
+        track(ob);
+    };
+
+    window.eventHooks["removeFromCart"] = function(product) {
+        //console.log("eventHooks", product);
+        var ob = createEventData("remove_from_cart");
         ob['ecommerce'] = {
             "currency": currency,
             "value": product.price,
@@ -285,7 +340,7 @@ import db from "./db.js"
 
     // <--- HOME ACTIONS END --->
 
-        // <--- CATEGORY ACTIONS START --->
+    // <--- CATEGORY ACTIONS START --->
 
     // event: click_sort
     $(".sort-menu a").click(function(event){
@@ -389,40 +444,89 @@ import db from "./db.js"
         //return false;
     });
 
+    $(".social-share-links .social-share").click(function(event){
+        var ob = createEventData("share");
+        ob["content_type"] = 'product';
+        ob["item_id"] = $('meta[name="product-id"]').attr('content');
+        ob["method"] = 'share';
+        ob["type"] = $(this).attr("data-type");
+
+        addEventDataClickLink(ob, this);
+        track(ob);
+    })
+
     // <--- PDP ACTIONS END --->
 
     // <--- CART ACTIONS START --->
 
-    //event: begin_checkout
-    /*
+    //event: view_cart
+
+    if(pageType == 'cart') {
+
+        var ob = createEventData("view_cart");
+        ob['ecommerce'] = {
+            "currency": currency,
+            "value": 0,
+            "items": []
+        }
+        addCartData(ob);
+        track(ob);
+    }
+
+    //event: use_valid_coupon
+    $("#coupon-form").submit(function(event){
+        //use_valid_coupon
+        var coupon = $("#coupon-form input").val();
+
+        if(coupon && coupon.length > 0 && coupon == "FREESHIP") {
+            var ob = createEventData("use_valid_coupon");
+            ob['ecommerce'] = {
+                "currency": currency,
+                "value": 0,
+                "items": []
+            }
+
+            addCartData(ob);
+            ob['ecommerce'].coupon = coupon;
+            track(ob);
+
+            alert("coupon applied")
+        } else {
+            var ob = createEventData("use_invalid_coupon");
+            ob['ecommerce'] = {
+                "currency": currency,
+                "value": 0,
+                "items": []
+            }
+
+            addCartData(ob);
+            ob['ecommerce'].coupon = coupon;
+            track(ob);
+
+            alert("invalid coupon")
+        }
+        
+        event.preventDefault();
+        return false;
+    })
+    
     $("#checkout").click(function(event){
 
         var ob = createEventData("begin_checkout");
-        addEventDataClickLink(ob, this);
-        var ob = createEventData("view_item");
-
         ob['ecommerce'] = {
             "currency": currency,
-            "value": product.price,
-            "items": [
-                {
-                    "item_brand": product.brand,
-                    "item_category": product.categoryId,
-                    "item_id": product.id,
-                    "item_name": product.name,
-                    //"item_variant": "item_variant",
-                    "price": product.price,
-                    "item_original_price" : product.originalPrice,
-                    "quantity": "quantity",
-                    "item_img" : product.img
-
-                }
-            ]
+            "value": 0,
+            "items": []
         }
-        track(ob);
-    });
-    */
+        
+        addCartData(ob);
+        ob['ecommerce'].coupon = $("#coupon-form input").val() == "FREESHIP" ? "FREESHIP" : undefined;
+        addEventDataClickLink(ob, this);
 
+        track(ob);
+        alert("proceed to checkout")
+    });
+    
     // <--- CART ACTIONS END --->
 
     // <--- CONTACT ACTIONS START --->

@@ -5,6 +5,10 @@ export default function () {
   const urlParams = new URLSearchParams(document.location.search)
   const pageType = $('meta[name="page-type"]').attr('content')
 
+  window.pageData = window.pageData || {};
+  window.pageData.pageType = pageType;
+  window.pageData.categoryName = $('meta[name="category-name"]').attr('content');
+
   initCommon()
 
   switch (pageType) {
@@ -73,6 +77,9 @@ export default function () {
     const prods = catData ? db.products.filter(prod => prod.categoryId === catData.id) : db.products
     $(".product-listing .product-tile").remove()
     prods.map((prod, index) => getProductTile(prod, "category-"+catPageId, index)).reverse().forEach( item =>  item.insertAfter(".product-list-controls"))
+    
+
+    window.pageData.products = prods;
   }
 
   function getProductTile(prod, listname, index) {
@@ -115,7 +122,12 @@ export default function () {
     const cat = db.categories.find(cat => cat.id === prod.categoryId)
 
     // Update page title
-    $("#page-title").text(prod.name)
+    $("#page-title").text(prod.name);
+
+    $('meta[name="product-name"]').attr('content', prod.name)
+    $('meta[name="product-id"]').attr('content', prod.id)
+    $('meta[name="product-price"]').attr('content', prod.price)
+
 
     // Update breadcrumb
     $(".breadcrumb-links p:last-child").html(`<a href="shop.html?category=${cat.id}">${cat.name}</a>`)
@@ -127,7 +139,9 @@ export default function () {
     $(".add-to-cart-link").on("click", e => {
       alert(`Added ${prod.name} to cart!`)
       addToCart(prod)
-    })
+    });
+
+    window.pageData.products = [prod];
 
   }
 
@@ -170,10 +184,17 @@ export default function () {
 
     localStorage.setItem('user-cart', JSON.stringify(cart))
 
+    if(window.eventHooks && typeof window.eventHooks["removeFromCart"] != 'undefined') {
+      window.eventHooks["removeFromCart"](lineItem);
+    }
+
     return removed
   }
 
   function initCart(){
+
+    $("#coupon-form input.form-control").val("FREESHIP");
+
     let cart = localStorage.getItem("user-cart")
     cart = cart ? JSON.parse(cart) : []
 
@@ -194,8 +215,6 @@ export default function () {
 
     const totalEl = $(".cart-total")
     totalEl.text(`$${subtotal + 10}.00`)
-    
-
   }
 
   function getCartLineItem(prod){
@@ -258,6 +277,31 @@ export default function () {
     navContainer.empty()
     const navEls = db.nav.map(item => $(/*html */`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`))
     navContainer.append(navEls)
+
+
+
+    // Search
+    $("#site-search-form .input-group-append").click(function(event){
+      var val = $("#site-search-form #search-term").val();
+      if(val && val.length > 0) { 
+        $("#site-search-form").submit();
+      }
+      event.preventDefault();
+      return false;
+    });
+
+    let cart = localStorage.getItem("user-cart")
+    cart = cart ? JSON.parse(cart) : []
+
+    // Summary
+    let subtotal = 0
+    cart.forEach(item => {
+      subtotal += (item.price * item.qty)
+    })
+
+    window.pageData.cart = {"items" : cart, "total": subtotal};
+    window.pageData.products = cart;
+    
 
   }
 
