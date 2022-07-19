@@ -34,13 +34,6 @@ import db from "./db.js"
     }
     localStorage.setItem("dlLog", window.dlLog);
 
-    var userId;
-    var user;
-    if(localStorage && localStorage.getItem("userId")){
-        userId = localStorage.getItem("userId");
-        user = db.default_users.find(usr => usr.id == userId);
-    }
-
     // const values
 
     var currency = "AUD";
@@ -70,9 +63,7 @@ import db from "./db.js"
 
     var addEventDataUser = function(ob){
 
-        if(window.pageData.user){
-            user = window.pageData.user;
-        }
+        var user = window.pageData.user;
 
         var userId = user ? user.user_id : undefined;
         var loginStatus = user ? "logged_in" : 'logged_out';
@@ -80,13 +71,21 @@ import db from "./db.js"
         var userName = user ? user.user_name : undefined;
         var userEmail = user ? user.user_email : undefined;
 
+        /*var userData = {
+            "user_id" : userId,
+            "login_status" : loginStatus,
+            "user_type" : userType,
+            "user_email" : userEmail,
+            "user_name" : userName,
+        }*/
+        
         ob["user_id"] = userId;
         ob["login_status"] = loginStatus;
         ob["user_type"] = userType;
         ob["user_email"] = userEmail;
         ob["user_name"] = userName;
 
-        return ob;
+        return ob;//Object.assign(ob, userData);
     }
 
     var addEventDataPageMeta = function(ob){
@@ -211,6 +210,7 @@ import db from "./db.js"
     }
 
     window.eventHooks["userLogout"] = function() {
+        //console.log("eventHooks userLogout", window.pageData.user)
         var ob = createEventData("logout");
         ob["type"] = "standard";
         addEventDataUser(ob);

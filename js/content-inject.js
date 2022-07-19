@@ -9,6 +9,7 @@ export default function () {
   window.pageData.pageType = pageType;
   window.pageData.categoryName = $('meta[name="category-name"]').attr('content');
   window.pageData.user = undefined;
+  //console.log("userUpdate clear user", window.pageData.user)
 
   userUpdate();
 
@@ -69,8 +70,8 @@ export default function () {
       $("#logout-link").text("Logout ("+user.user_name+")");
       $("#logout-link").show();
       $("#register-link").hide();
-
       window.pageData.user = user;
+      //console.log("userUpdate set user", window.pageData.user)
 
     } else {
       $("#login-link").show();
@@ -78,6 +79,7 @@ export default function () {
       $("#logout-link").text("Logout");
       $("#register-link").show();
       window.pageData.user = undefined;
+      //console.log("userUpdate clear user", window.pageData.user)
     }
   }
 
