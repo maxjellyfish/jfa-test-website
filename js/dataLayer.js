@@ -34,10 +34,15 @@ import db from "./db.js"
     }
     localStorage.setItem("dlLog", window.dlLog);
 
+    var userId;
+    var user;
+    if(localStorage && localStorage.getItem("userId")){
+        userId = localStorage.getItem("userId");
+        user = db.default_users.find(usr => usr.id == userId);
+    }
+
     // const values
-    var userId = "u12345abc";
-    var loginStatus = "logged_in";
-    var userType = "member";
+
     var currency = "AUD";
     var pageType = $('meta[name="page-type"]').attr('content');
 
@@ -64,9 +69,23 @@ import db from "./db.js"
     }
 
     var addEventDataUser = function(ob){
+
+        if(window.pageData.user){
+            user = window.pageData.user;
+        }
+
+        var userId = user ? user.user_id : undefined;
+        var loginStatus = user ? "logged_in" : 'logged_out';
+        var userType = user ? user.user_type : 'guest';
+        var userName = user ? user.user_name : undefined;
+        var userEmail = user ? user.user_email : undefined;
+
         ob["user_id"] = userId;
         ob["login_status"] = loginStatus;
         ob["user_type"] = userType;
+        ob["user_email"] = userEmail;
+        ob["user_name"] = userName;
+
         return ob;
     }
 
@@ -171,6 +190,35 @@ import db from "./db.js"
         track(ob);
     };
 
+
+    window.eventHooks["userLogin"] = function(user) {
+        var ob = createEventData("login");
+        ob["type"] = "standard";
+        addEventDataUser(ob);
+        track(ob);
+        
+        alert("user login: "+user.user_name);
+    }
+
+    window.eventHooks["userRegister"] = function(user) {
+        var ob = createEventData("sign_up");
+        ob["type"] = "standard";
+        addEventDataUser(ob);
+        track(ob);
+
+        alert("user sign up: "+user.user_name);
+
+    }
+
+    window.eventHooks["userLogout"] = function() {
+        var ob = createEventData("logout");
+        ob["type"] = "standard";
+        //addEventDataUser(ob);
+        track(ob);
+
+        alert("user logout");
+    }
+
     // <--- TRACKING HELPERS END --->
 
     // <--- COMMON ACTIONS START --->
@@ -203,32 +251,6 @@ import db from "./db.js"
         track(ob);
     });
 
-    // event: sign_up
-    $("#register-link").click(function(event){
-
-        var ob = createEventData("sign_up");
-        ob["type"] = "standard";
-        addEventDataUser(ob);
-        track(ob);
-
-        alert("user sign up");
-        event.preventDefault();
-        return false;
-    });
-
-    // event: login
-    $("#login-link").click(function(event){
-
-        var ob = createEventData("login");
-        ob["type"] = "standard";
-        addEventDataUser(ob);
-        track(ob);
-        
-        alert("user login");
-        event.preventDefault();
-        return false;
-    });
-
     // event: subscribe
     $("#subscribe-footer").submit(function(event){
         
@@ -237,7 +259,7 @@ import db from "./db.js"
             var ob = createEventData("subscribe");
             ob["optin_newlestter"] = "yes";
             ob["event_context"] = "subscribe_footer";
-            ob["user_email"] = email;
+            ob["form_email"] = email;
             track(ob);
             alert("user subscribed footer");
         }
@@ -349,7 +371,7 @@ import db from "./db.js"
             var ob = createEventData("subscribe");
             ob["optin_newlestter"] = "yes";
             ob["event_context"] = "subscribe_banner";
-            ob["user_email"] = email;
+            ob["form_email"] = email;
             track(ob);
             alert("user subscribed banner");
         }
@@ -587,7 +609,7 @@ import db from "./db.js"
         var email = $(this).find("input.email").val();
         if(email && email.length > 0 && email.indexOf("@")) {
             var ob = createEventData("contact");
-            ob["user_email"] = email;
+            ob["form_email"] = email;
             ob["subject"] = "general";
             ob["form_id"] = $(this).id;
             ob["form_name"] = "contact us";

@@ -8,8 +8,11 @@ export default function () {
   window.pageData = window.pageData || {};
   window.pageData.pageType = pageType;
   window.pageData.categoryName = $('meta[name="category-name"]').attr('content');
+  window.pageData.user = undefined;
 
-  initCommon()
+  userUpdate();
+
+  initCommon();
 
   switch (pageType) {
     case 'home':
@@ -33,6 +36,75 @@ export default function () {
   }
 
   ////////////////////////////////////
+
+  function userLogin(){
+    var user;
+    var userId;
+    if(localStorage && localStorage.getItem("userId")){
+      userId = localStorage.getItem("userId");
+      user = db.default_users.find(usr => usr.user_id == userId);
+      localStorage.setItem("userStatus", "active");
+    } else {
+      var count = db.default_users.length-1;
+      var random = Math.round(Math.random()*count);
+      user = db.default_users[random];
+      localStorage.setItem("userStatus", "active");
+      localStorage.setItem("userId", user.user_id);
+    }
+    userUpdate();
+    if(window.eventHooks && typeof window.eventHooks["userLogin"] != 'undefined') {
+      window.eventHooks["userLogin"](user);
+    }
+
+  }
+
+  function userUpdate(){
+    var userStatus = localStorage.getItem("userStatus");
+    if(userStatus == "active") {
+
+      var userId = localStorage.getItem("userId");
+      var user = db.default_users.find(usr => usr.user_id == userId);
+      //console.log("userUpdate", userId, user)
+      $("#login-link").hide();
+      $("#logout-link").text("Logout ("+user.user_name+")");
+      $("#logout-link").show();
+      $("#register-link").hide();
+
+      window.pageData.user = user;
+
+    } else {
+      $("#login-link").show();
+      $("#logout-link").hide();
+      $("#logout-link").text("Logout");
+      $("#register-link").show();
+      window.pageData.user = undefined;
+    }
+  }
+
+  function userRegister(){
+
+    var count = db.default_users.length-1;
+    var random = Math.round(Math.random()*count);
+    var user = db.default_users[random];
+
+    if(localStorage){
+      localStorage.setItem("userId", user.user_id);
+      localStorage.setItem("userStatus", "active");
+    }
+
+    userUpdate();
+    if(window.eventHooks && typeof window.eventHooks["userRegister"] != 'undefined') {
+      window.eventHooks["userRegister"](user);
+    }
+  }
+
+  function userLogout(){
+    localStorage.setItem("userStatus", "offline");
+    userUpdate();
+    if(window.eventHooks && typeof window.eventHooks["userLogout"] != 'undefined') {
+      window.eventHooks["userLogout"]();
+    }
+  }
 
   function initHome() {
 
@@ -278,6 +350,16 @@ export default function () {
     const navEls = db.nav.map(item => $(/*html */`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`))
     navContainer.append(navEls)
 
+    // User
+    $("#login-link").click(function(event){
+      userLogin();
+    });
+    $("#logout-link").click(function(event){
+      userLogout();
+    });
+    $("#register-link").click(function(event){
+      userRegister();
+    });
 
 
     // Search
