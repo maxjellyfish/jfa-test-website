@@ -1,7 +1,7 @@
 window.params = new Proxy(new URLSearchParams(window.location.search), {
   get: (searchParams, prop) => searchParams.get(prop),
 });
-window.gtmId = 'GTM-TTGJ67N'; //GTM-TTGJ67N
+window.gtmId = 'GTM-XXXXXX'; //GTM-XXXXXX
 
 if (window.params && typeof window.params.gtmId != 'undefined' && window.params.gtmId && window.params.gtmId != 'null') {
   window.gtmId = window.params.gtmId;
