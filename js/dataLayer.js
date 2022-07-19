@@ -213,7 +213,7 @@ import db from "./db.js"
     window.eventHooks["userLogout"] = function() {
         var ob = createEventData("logout");
         ob["type"] = "standard";
-        //addEventDataUser(ob);
+        addEventDataUser(ob);
         track(ob);
 
         alert("user logout");
