@@ -98,30 +98,33 @@ const data = {
   products: [
     {
       id:"shirts-1",
-      name: "Colourful Stylish Shirt",
+      name: "Colourless Stylish Dress",
       categoryId: 'shirts',
       img: "img/product-1.jpg",
       price: 123,
       originalPrice: 150,
-      brand : 'jellyfish'
+      brand : 'jellyfish',
+      imgs: ["img/product-1.jpg", "img/product-1.jpg"]
     },
     {
       id:"bags-1",
-      name: "Colourful Stylish Bag",
+      name: "Wolf Face Bag",
       categoryId: 'bags',
       img: "img/product-2.jpg",
       price: 234,
       originalPrice: 470,
-      brand : 'jellyfish'
+      brand : 'jellyfish',
+      imgs: ["img/product-2.jpg", "img/product-2.jpg"]
     },
     {
       id:"shoes-1",
-      name: "Colourful Stylish Shoes",
+      name: "Merrell Shoes",
       categoryId: 'shoes',
       img: "img/product-3.jpg",
       price: 80,
       originalPrice: 90,
-      brand : 'jellyfish'
+      brand : 'jellyfish',
+      imgs: ["img/product-3.jpg", "img/product-3.jpg"]
     },
   ]
 }

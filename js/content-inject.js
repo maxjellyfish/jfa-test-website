@@ -197,6 +197,7 @@ export default function () {
 
     // Update page title
     $("#page-title").text(prod.name);
+    $(".product-title").text(prod.name);
 
     $('meta[name="product-name"]').attr('content', prod.name)
     $('meta[name="product-id"]').attr('content', prod.id)
@@ -206,6 +207,17 @@ export default function () {
     // Update breadcrumb
     $(".breadcrumb-links p:last-child").html(`<a href="shop.html?category=${cat.id}">${cat.name}</a>`)
 
+
+    // Updates Images
+    var carouselItems = '';
+    for(var i=0; i<prod.imgs.length; i++){
+      var active = i == 0 ? "active" : '';
+      var imgSrc = prod.imgs[i];
+      carouselItems += '<div class="carousel-item '+active+'"><img class="w-100 h-100" src="'+imgSrc+'" alt="'+prod.name+'"></div>';
+    }
+
+    $(".carousel-inner").html(carouselItems);
+    
     // Update price
     $(".product-price").text(`$${prod.price}.00`)
 
