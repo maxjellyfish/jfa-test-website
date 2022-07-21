@@ -98,7 +98,7 @@ const data = {
   products: [
     {
       id:"shirts-1",
-      name: "Colourless Stylish Dress",
+      name: "Colourless Stylish Top",
       categoryId: 'shirts',
       img: "img/product-1.jpg",
       price: 123,

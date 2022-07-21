@@ -170,8 +170,8 @@ export default function () {
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-between bg-light border">
-                    <a data-product-id="${prod.id}" data-listname="${listname}" data-index="${index}" href="detail.html?product-id=${prod.id}" title="Colorful Stylish Shirt" class="product-link btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                    <button class="add-to-cart-link btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
+                    <a data-location="product-listing" data-product-name="${prod.name}" data-product-id="${prod.id}" data-listname="${listname}" data-index="${index}" href="detail.html?product-id=${prod.id}" title="Colorful Stylish Shirt" class="product-link btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>
+                    <button data-location="product-listing" data-product-name="${prod.name}" data-product-id="${prod.id}" data-listname="${listname}" data-index="${index}" class="add-to-cart-link btn btn-sm text-dark p-0"><i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</button>
                 </div>
             </div>
         </div>`)
@@ -207,7 +207,6 @@ export default function () {
     // Update breadcrumb
     $(".breadcrumb-links p:last-child").html(`<a href="shop.html?category=${cat.id}">${cat.name}</a>`)
 
-
     // Updates Images
     var carouselItems = '';
     for(var i=0; i<prod.imgs.length; i++){
@@ -215,6 +214,10 @@ export default function () {
       var imgSrc = prod.imgs[i];
       carouselItems += '<div class="carousel-item '+active+'"><img class="w-100 h-100" src="'+imgSrc+'" alt="'+prod.name+'"></div>';
     }
+
+    //Update add to cart button
+    $("button.add-to-cart-link").attr("data-product-id", prod.id);
+    $("button.add-to-cart-link").attr("data-product-name", prod.name);
 
     $(".carousel-inner").html(carouselItems);
     
