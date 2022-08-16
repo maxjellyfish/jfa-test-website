@@ -400,7 +400,14 @@ export default function () {
 
     window.pageData.cart = {"items" : cart, "total": subtotal};
     window.pageData.products = cart;
-    
+
+    var gtmId = localStorage.getItem("gtmId");
+    gtmId = gtmId ? gtmId : window.gtmId;
+    var dlLog = localStorage.getItem("dlLog");
+    dlLog = dlLog == "y" ? 'y' : 'n';
+    var dl = localStorage.getItem("dl");
+    dl = dl == "y" ? 'y' : 'n';
+    $("small.setting-info").text("["+gtmId+ " | log:"+dlLog+" | dl:"+dl+"]");
 
   }
 
