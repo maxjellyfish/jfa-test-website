@@ -234,7 +234,7 @@ export default function () {
       }
 
       localStorage.setItem("user-transaction", JSON.stringify(data))
-      window.location.href = "/confirmation.html"
+      window.location.href = "confirmation.html"
     })
 
     if(!cart.length){
@@ -249,7 +249,7 @@ export default function () {
 
     // If no purchase info, redirect to home
     if(!purchaseData){
-      window.location.href = "/index.html"
+      window.location.href = "index.html"
       return
     }
 
