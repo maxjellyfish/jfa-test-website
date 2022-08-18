@@ -31,6 +31,12 @@ export default function () {
     case 'cart':
       initCart()
       break;
+    case 'checkout':
+      initCheckout()
+      break;
+    case 'confirmation':
+      initConfirmation()
+      break;
     default:
       console.log("content-inject.js: unknown page type", pageType)
       break
@@ -184,6 +190,94 @@ export default function () {
     return item
   }
 
+  function initCheckout(){
+
+    let cart = localStorage.getItem("user-cart")
+    cart = cart ? JSON.parse(cart) : []
+
+    // Product list
+    const container = $("#products-list")
+    if(cart.length) container.append(cart.map(item => {
+      return $(/*html */`
+      <li class="d-flex justify-content-between">
+          <p>${item.name}${item.qty > 1 ? ` (x${item.qty})` : ''}</p>
+          <p>$${item.price * item.qty}.00</p>
+      </li>`)
+    }))
+    else  container.append($(`<li><td colspan="5">Nothing in cart</td></li>`))
+
+    // Summary
+    let subtotal = 0
+    cart.forEach(item => {
+      subtotal += (item.price * item.qty)
+    })
+
+    const subtotalEl = $("#subtotal-text")
+    subtotalEl.text(`$${subtotal}.00`)
+
+    const totalEl = $("#total-text")
+    totalEl.text(`$${subtotal + 10}.00`)
+
+
+    // Submit listener
+    $("#checkout-form").on("submit", e => {
+      e.preventDefault()
+      const formData = Object.fromEntries(new FormData(e.target))
+      
+      const data = {
+        ...formData,
+        products: cart,
+        shipping: 10,
+        subtotal,
+        total: subtotal + 10,
+        orderId: (Math.random() + "").slice(2)
+      }
+
+      localStorage.setItem("user-transaction", JSON.stringify(data))
+      window.location.href = "/confirmation.html"
+    })
+
+    if(!cart.length){
+      $("#place-order").prop("disabled", true)
+    }
+
+  }
+
+  function initConfirmation(){
+
+    let purchaseData =  localStorage.getItem("user-transaction")
+
+    // If no purchase info, redirect to home
+    if(!purchaseData){
+      window.location.href = "/index.html"
+      return
+    }
+
+    purchaseData = JSON.parse(purchaseData)
+
+    $("#order-id").text(purchaseData.orderId)
+    $("#subtotal-text").text(`$${purchaseData.subtotal}.00`)
+    $("#total-text").text(`$${purchaseData.total}.00`)
+
+    const prodList = $("#products-list")
+
+    prodList.append(purchaseData.products.map(item => {
+      return $(/*html */`
+      <li class="mt-3 d-flex align-items-center">
+          <img src="${item.img}" width="60" class="d-block" />
+          <p class="ml-3 mb-0"><a href="/detail.html?product-id=${item.id}">${item.name}</a>${item.qty > 1 ? ` (x${item.qty})` : ''}</p>
+          <p class="mb-0 ml-auto">$${item.price * item.qty}.00</p>
+      </li>`)
+    }))
+
+    // Here so dataLayer.js can access
+    window.pageData.purchase = purchaseData
+
+    // then clear local cart and transaction
+    localStorage.removeItem('user-transaction')
+    localStorage.removeItem('user-cart')
+  }
+
   function initPDP() {
 
     const prodPageId = urlParams.get('product-id')
@@ -304,6 +398,12 @@ export default function () {
 
     const totalEl = $(".cart-total")
     totalEl.text(`$${subtotal + 10}.00`)
+
+
+    // Disable checkout button if empty cart
+    if(!cart.length){
+      $("#checkout").addClass("disabled")
+    }
   }
 
   function getCartLineItem(prod){
