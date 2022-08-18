@@ -2,6 +2,7 @@ import db from "./db.js"
 //db.products.find(prod => prod.id == paramId)
 
 // data-interval="false"
+//import TeliumDataHandler from "./dataHandlers/TeliumDataHandler.class.js";
 
 (function ($) {
     "use strict";
@@ -36,6 +37,9 @@ import db from "./db.js"
 
     // const values
 
+    // determine which handler you need
+    //const platformHandler = new TeliumDataHandler()
+
     var currency = "AUD";
     var pageType = $('meta[name="page-type"]').attr('content');
 
@@ -44,13 +48,20 @@ import db from "./db.js"
     // <--- TRACKING HELPERS START --->
 
     var track = function(ob) {
+
+        // ob = platformHandler.transform(ob)
+
+        // if(window.dataLayer && window.dl == 'y') {
+        //     platformHandler.push(ob);
+        // }
+
         if(window.dataLayer && window.dl == 'y') {
             window.dataLayer.push(ob);
         }
+
         if(window.dlLog == 'y') {
             console.log('track', ob);
         }
-        
     }
 
     // dl helpers
@@ -596,7 +607,7 @@ import db from "./db.js"
         addEventDataClickLink(ob, this);
 
         track(ob);
-        alert("proceed to checkout")
+        //alert("proceed to checkout")
     });
     
     // <--- CART ACTIONS END --->
