@@ -37,6 +37,9 @@ export default function () {
     case 'confirmation':
       initConfirmation()
       break;
+    case 'blog-index':
+      initBlog()
+      break;
     default:
       console.log("content-inject.js: unknown page type", pageType)
       break
@@ -276,6 +279,66 @@ export default function () {
     // then clear local cart and transaction
     localStorage.removeItem('user-transaction')
     localStorage.removeItem('user-cart')
+  }
+
+  function initBlog(){
+    
+    window.addEventListener("popstate", e => {
+      onBlogHistoryChange()
+    })
+
+    onBlogHistoryChange()
+
+  }
+
+  function onBlogHistoryChange(){
+    const urlObj = new URL(window.location.href)
+    const postId = urlObj.searchParams.get('post-id')
+    if(!postId) populateBlogIndex()
+    else populateBlogPost(db.blog.posts.find(p => p.id == postId))
+  }
+
+  function populateBlogPost(post){
+    $("#page-title").text(post.title)
+
+    const postsContainer = $("#blog-posts")
+    postsContainer.empty()
+
+    postsContainer.append($(/*html */`
+      <p class="d-flex w-100 text-center"><span>By <strong>${post.author}</strong> &bull; ${post.date}</span><span class="d-block ml-auto small text-uppercase">${post.tags}</span></p>
+      <img class="w-100 d-block mb-4" src="${post.heroImage}" />
+    `))
+    postsContainer.append($(post.html))
+  }
+  
+  function populateBlogIndex(){
+
+    $("#page-title").text("Blog")
+ 
+    const posts = db.blog.posts
+    const postsContainer = $("#blog-posts")
+    postsContainer.empty()
+
+    postsContainer.append(posts.map(post => {
+      const el =  $(/*html */`
+        <a href="#" class="blog-post-tile m-2" style="width: 300px;">
+            <img src="${post.heroImage}" class="d-block w-100" height="185" style="object-fit: cover;" />
+            <h4 class="mt-2">${post.title}</h4>
+            <p>${post.date}</p>
+        </a>`)
+
+      el.on("click", e => {
+        e.preventDefault()
+
+        const urlObj = new URL(window.location.href)
+        urlObj.searchParams.set('post-id', post.id)
+        history.pushState({}, "", urlObj)
+
+        onBlogHistoryChange()
+      })
+
+      return el
+    }))
   }
 
   function initPDP() {
