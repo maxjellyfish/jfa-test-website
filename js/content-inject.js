@@ -221,6 +221,12 @@ export default function () {
     const totalEl = $("#total-text")
     totalEl.text(`$${subtotal + 10}.00`)
 
+     window.pageData.checkout = {
+      products : cart,
+      subtotal : subtotal,
+      total : subtotal + 10
+     }
+
 
     // Submit listener
     $("#checkout-form").on("submit", e => {
@@ -234,6 +240,12 @@ export default function () {
         subtotal,
         total: subtotal + 10,
         orderId: (Math.random() + "").slice(2)
+      }
+      // fix for payment
+      data.payment_method = $('input[type=radio][name=payment_method]:checked')[0].id;
+
+      if(window.eventHooks && typeof window.eventHooks["checkoutSubmit"] != 'undefined') {
+        window.eventHooks["checkoutSubmit"](data);
       }
 
       localStorage.setItem("user-transaction", JSON.stringify(data))

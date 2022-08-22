@@ -2,13 +2,16 @@ import db from "./db.js"
 //db.products.find(prod => prod.id == paramId)
 
 // data-interval="false"
-//import TeliumDataHandler from "./dataHandlers/TeliumDataHandler.class.js";
+import BaseDataHandler from "./dataHandlers/BaseDataHandler.class.js";
+import GtmGa4DataHandler from "./dataHandlers/GtmGa4DataHandler.class.js";
+import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
 
 (function ($) {
     "use strict";
 
     window.dataLayer = window.dataLayer || []
     window.dl = 'y';
+    window.dlt = 'gtm';
 
     var getQueryParam = function(key){
         var value = undefined;
@@ -27,7 +30,13 @@ import db from "./db.js"
     }
     localStorage.setItem("dl", window.dl);
 
-    window.dlLog = 'y';
+    if(getQueryParam("dlt")) {
+        window.dlt = getQueryParam("dlt")
+    } else if(localStorage && localStorage.getItem("dlt") && localStorage.getItem("dlt") != 'null'){
+        window.dlt = localStorage.getItem("dlt");
+    }
+    localStorage.setItem("dlt", window.dlt);
+
     if(getQueryParam("dlLog")) {
         window.dlLog = getQueryParam("dlLog");
     } else if(localStorage && localStorage.getItem("dlLog")){
@@ -36,9 +45,18 @@ import db from "./db.js"
     localStorage.setItem("dlLog", window.dlLog);
 
     // const values
-
+    var platformHandler;
     // determine which handler you need
-    //const platformHandler = new TeliumDataHandler()
+    if(window.dlt == 'gtm') {
+        platformHandler = new GtmGa4DataHandler();
+    } else if (window.dlt == 'gtmc'){
+        platformHandler = new GtmCustomDataHandler();
+    } else {
+        platformHandler = new BaseDataHandler();
+    }
+
+
+   // platformHandler = new GtmCustomDataHandler(); 
 
     var currency = "AUD";
     var pageType = $('meta[name="page-type"]').attr('content');
@@ -51,13 +69,13 @@ import db from "./db.js"
 
         // ob = platformHandler.transform(ob)
 
-        // if(window.dataLayer && window.dl == 'y') {
-        //     platformHandler.push(ob);
-        // }
-
-        if(window.dataLayer && window.dl == 'y') {
-            window.dataLayer.push(ob);
+        if(window.dl == 'y') {
+             platformHandler.push(ob);
         }
+
+        //if(window.dataLayer && window.dl == 'y') {
+            //window.dataLayer.push(ob);
+        //}
 
         if(window.dlLog == 'y') {
             console.log('track', ob);
@@ -200,6 +218,21 @@ import db from "./db.js"
         track(ob);
     };
 
+    window.eventHooks["checkoutSubmit"] = function(product) {
+        //console.log("eventHooks", product);
+        var ob = createEventData("checkout_submit");
+
+        var payment = $('input[type=radio][name=payment_method]:checked')[0].id;
+        ob['ecommerce'] = {
+            "currency": currency,
+            "value": 0,
+            "items": []
+        }
+        ob.ecommerce.payment_type = payment;
+        addCartData(ob);
+        //ob.ecommerce.coupon = ""
+        track(ob);
+    };
 
     window.eventHooks["userLogin"] = function(user) {
         var ob = createEventData("login");
@@ -611,6 +644,76 @@ import db from "./db.js"
     });
     
     // <--- CART ACTIONS END --->
+
+    // <--- CHECKOUT ACTIONS START --->
+    if(pageType == 'checkout') {
+        var ob = createEventData("add_shipping_info");
+        ob['ecommerce'] = {
+            "currency": currency,
+            "value": 0,
+            "items": []
+        }
+        addCartData(ob);
+        //ob.ecommerce.coupon = ""
+        track(ob);
+
+        $('input[type=radio][name=payment_method]').change(function() {
+            var value = this.id;
+            var ob = createEventData("add_payment_info");
+            ob['ecommerce'] = {
+                "currency": currency,
+                "value": 0,
+                "items": []
+            }
+            ob.ecommerce.payment_type = value;
+            addCartData(ob);
+            //ob.ecommerce.coupon = ""
+            track(ob);
+        });
+    }
+
+    // <--- CHECKOUT ACTIONS END --->
+
+    // <--- ORDER CONFIRMATION ACTIONS START --->
+    if(pageType == 'confirmation') {
+
+        var purchase = window.pageData.purchase;
+        var products = purchase.products;
+
+        var ob = createEventData("purchase");
+        ob['ecommerce'] = {
+            "currency": currency,
+            "value": 0,
+            "items": []
+        }
+        ob.ecommerce.transaction_id = purchase.orderId;
+        ob.ecommerce.value = purchase.total;
+        ob.ecommerce.tax = Math.round(purchase.total*.09);
+        ob.ecommerce.shipping = purchase.shipping
+        ob.ecommerce.payment_type = purchase.payment_method;
+        //ob.ecommerce.coupon = ""
+        
+        var items = [];
+        for(var i=0; i<products.length; i++){
+            items.push({
+                "item_brand": products[i].brand,
+                "item_category": products[i].categoryId,
+                "item_id": products[i].id,
+                "item_name": products[i].name,
+                //"item_variant": "item_variant",
+                "price": products[i].price,
+                "item_original_price" : products[i].originalPrice,
+                "quantity": "quantity",
+                "item_img" : products[i].img
+            });
+        }
+
+        ob.ecommerce.items = items;
+        
+        track(ob);
+
+    }
+    // <--- ORDER CONFIRMATION ACTIONS END --->
 
     // <--- CONTACT ACTIONS START --->
 

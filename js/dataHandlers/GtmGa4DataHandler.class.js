@@ -1,7 +1,8 @@
 import BaseDataHandler from "./BaseDataHandler.class.js"
 
-export default class TeliumDataHandler extends BaseDataHandler {
+export default class GtmGa4DataHandler extends BaseDataHandler {
   constructor(){
+    super();
     window.dataLayer = window.dataLayer || []
   }
 
