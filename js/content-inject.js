@@ -15,6 +15,10 @@ export default function () {
 
   initCommon();
 
+
+
+
+
   switch (pageType) {
     case 'home':
       initHome()
@@ -566,12 +570,6 @@ export default function () {
       
     })
     navContainer.append(navEls)
-    //<li class="dropdown">
-    //                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a>
-    //                            <ul class="dropdown-menu">
-    //                                <li><a href="/forms.html">Forms</a></li>
-    //                            </ul>
-    //                        </li>
 
     // User
     $("#login-link").click(function(event){
@@ -615,6 +613,24 @@ export default function () {
     dl = dl == "y" ? 'y' : 'n';
     $("small.setting-info").text("["+gtmId+ " | log:"+dlLog+" | dl:"+dl+"]");
 
+
+    // modal
+    var modal = $(/*html */`
+      <div id="modal-common"class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+              <div class="image"></div>
+              <p></p>
+            </div>
+          </div>/.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->`
+    );
+    $("body").append(modal);
   }
 
 
