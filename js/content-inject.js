@@ -306,8 +306,15 @@ export default function () {
   function onBlogHistoryChange(){
     const urlObj = new URL(window.location.href)
     const postId = urlObj.searchParams.get('post-id')
-    if(!postId) populateBlogIndex()
-    else populateBlogPost(db.blog.posts.find(p => p.id == postId))
+    if(!postId) {
+      populateBlogIndex()
+    } else {
+      populateBlogPost(db.blog.posts.find(p => p.id == postId))
+    }
+
+    if(window.eventHooks && typeof window.eventHooks["pageRoute"] != 'undefined') {
+      setTimeout(window.eventHooks["pageRoute"], 250);
+    }
   }
 
   function populateBlogPost(post){
@@ -539,8 +546,32 @@ export default function () {
     // Main nav
     const navContainer = $(".main-menu.navbar-nav")
     navContainer.empty()
-    const navEls = db.nav.map(item => $(/*html */`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`))
+    /*
+    const navEls = db.nav.map(item => $(/--html --/`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`))
+    */
+    
+
+    const navEls = db.nav.map(function(item){
+      if(typeof item.items != 'undefined' && item.items.length > 0) {
+        var html = /*html */`<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a><ul class="dropdown-menu">`
+        for(var i=0; i<item.items.length; i++){
+          html += `<li><a id="main-menu-${item.items[i].pageType}" href="${item.items[i].url}" class="nav-item nav-link ${pageType === item.items[i].pageType ? "active" : ""}">${item.items[i].name}</li></a>`
+        }
+        html += `</ul>`
+        return $(html);
+
+      } else {
+        return $(/*html */`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`);
+      }
+      
+    })
     navContainer.append(navEls)
+    //<li class="dropdown">
+    //                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a>
+    //                            <ul class="dropdown-menu">
+    //                                <li><a href="/forms.html">Forms</a></li>
+    //                            </ul>
+    //                        </li>
 
     // User
     $("#login-link").click(function(event){

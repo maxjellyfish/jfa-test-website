@@ -136,7 +136,6 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
         return ob;
     }
 
-
     var addCartData = function(ob){
 
         var cart = localStorage.getItem("user-cart")
@@ -169,6 +168,14 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
 
     // event hooks 
     window.eventHooks = window.eventHooks || {};
+
+    window.eventHooks["pageRoute"] = function() {
+        var ob = createEventData("page_view");
+        addEventDataPageMeta(ob);
+        addEventDataUser(ob);
+        ob.virtual = "yes";
+        track(ob);
+    }
 
     window.eventHooks["addToCart"] = function(product) {
         //console.log("eventHooks", product);
@@ -738,6 +745,93 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
     });
 
     // <--- CONTACT ACTIONS END --->
+
+
+    // <--- FORM ACTIONS START --->
+
+
+    // jsForm
+    $("#jsForm").submit(function(event){
+        alert("jsForm submitted");
+        event.preventDefault();
+        return false;
+    });
+
+    // dlForm
+
+    var dlStart = false;
+
+    var startForm = function(id,name){
+        if(dlStart === false) {
+            dlStart = true;
+            var ob = createEventData("start_form");
+            ob["form_id"] = id;
+            ob["form_name"] = name;
+            track(ob);
+        }
+    }
+
+    $("#dlForm input").blur(function(){
+        startForm("dlForm", "dlForm");
+        var ob = createEventData("exit_field_form");
+        ob["form_id"] = "dlForm";
+        ob["form_name"] = "dlForm";
+        ob["field_id"] = this.id;
+        if( $(this).attr('type') == "checkbox") {
+            ob["field_value"] = $(this).prop("checked") == true ? 'yes' : 'no';
+        } else if( $(this).attr('type') == "radio") {
+            ob["field_value"] = $('input[name="dlRadio"]:checked').val();
+        }
+        track(ob);
+    })
+
+    $("#dlForm input").focus(function(){
+        startForm("dlForm", "dlForm");
+        var ob = createEventData("enter_field_form");
+        ob["form_id"] = "dlForm";
+        ob["form_name"] = "dlForm";
+        ob["field_id"] = this.id;
+        track(ob);
+    })
+
+    $("#dlForm select").change(function(){
+        startForm("dlForm", "dlForm");
+        var ob = createEventData("exit_field_form");
+        ob["form_id"] = "dlForm";
+        ob["form_name"] = "dlForm";
+        ob["field_id"] = this.id;
+        ob["field_value"] = $(this).find(":selected").text();
+        track(ob);
+    });
+
+    $("#dlForm").submit(function(event){
+
+        var ob = createEventData("submit_form");
+        ob["form_id"] = "dlForm";
+        ob["form_name"] = "dlForm";
+        ob["data"] = {
+            "dlSelect" : $("#dlForm select").find(":selected").text(),
+            "dlCheckbox" : $('#dlForm input[type="checkbox"]').prop("checked") == true ? 'yes' : 'no',
+            "dlRadio" : $('#dlForm input[name="dlRadio"]:checked').val()
+        };
+        track(ob);
+        alert("dlForm submitted");
+
+        var ob = createEventData("complete_form");
+        ob["form_id"] = "dlForm";
+        ob["form_name"] = "dlForm";
+        ob["data"] = {
+            "dlSelect" : $("#dlForm select").find(":selected").text(),
+            "dlCheckbox" : $('#dlForm input[type="checkbox"]').prop("checked") == true ? 'yes' : 'no',
+            "dlRadio" : $('#dlForm input[name="dlRadio"]:checked').val()
+        };
+        track(ob);
+        alert("dlForm completed");
+        event.preventDefault();
+        return false;
+    });
+
+    // <--- FORM ACTIONS END --->
 
     // <--- VIDEO ACTIONS START --->
 

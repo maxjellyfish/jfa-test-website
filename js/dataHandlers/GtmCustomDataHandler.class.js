@@ -104,6 +104,21 @@ export default class GtmCustomDataHandler extends BaseDataHandler {
           transform.event = "custom.form.submit";
           transform.name = "subscribe";
           break;
+        case "start_form" : 
+          transform.event = "custom.form.start";
+          break;
+        case "complete_form" : 
+          transform.event = "custom.form.complete";
+          break;
+        case "submit_form" : 
+          transform.event = "custom.form.submit";
+          break;
+        case "exit_field_form" : 
+          transform.event = "custom.form.field.exit";
+          break;
+        case "enter_field_form" : 
+          transform.event = "custom.form.field.enter";
+          break;
         case "search" : 
           transform.event = "custom.search.submit";
           break;
@@ -178,6 +193,20 @@ export default class GtmCustomDataHandler extends BaseDataHandler {
       addDataKey("percent", transform, "video_percent", ob);
       addDataKey("provider", transform, "video_provider", ob);
       addDataKey("visible", transform, "visible", ob);
+
+      //form data
+      addFormKey("id", transform, "form_id", ob);
+      addFormKey("name", transform, "form_name", ob);
+      addFormKey("fieldId", transform, "field_id", ob);
+      addFormKey("fieldValue", transform, "field_value", ob);
+
+      if(typeof ob.data != 'undefined' && ob.data){
+        addDataKey("dlSelect", transform, "dlSelect", ob.data);
+        addDataKey("dlCheckbox", transform, "dlCheckbox", ob.data);
+        addDataKey("dlRadio", transform, "dlRadio", ob.data);
+      }
+      
+
 
 
       if(typeof ob['video_title'] != 'undefined' && ob['video_title']) {
@@ -255,6 +284,16 @@ export default class GtmCustomDataHandler extends BaseDataHandler {
             });
         }
         return promotions;
+    }
+
+    function addFormKey(transformKey, transformData, targetKey, targetData){
+
+      if(targetData[targetKey]) {
+        if(typeof transformData.form == 'undefined') {
+          transformData.form = {};
+        }
+        transformData.form[transformKey] = targetData[targetKey];
+      }
     }
 
     function addSearchKey(transformKey, transformData, targetKey, targetData){

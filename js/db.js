@@ -82,6 +82,22 @@ const data = {
       name: "Contact",
       url: "contact.html"
     },
+    {
+      pageType:"forms",
+      name: "Forms",
+      url: "forms.html"
+    }
+    /*
+    {
+      name: "Other",
+      items: [
+          {
+            pageType:"forms",
+            name: "Forms",
+            url: "forms.html"
+          }
+      ]
+    },*/
   ],
   categories: [
     {
