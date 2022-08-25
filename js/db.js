@@ -63,41 +63,35 @@ const data = {
   ],
   nav:[
     {
-      pageType:"home",
+      pageId:"2",
       name: "Home",
       url: "index.html"
     },
     {
-      pageType:"category",
+      pageId:"1",
       name: "Shop",
       url: "shop.html"
     },
     {
-      pageType:"blog",
+      pageId:"9",
       name: "Blog",
       url: "blog.html"
     },
     {
-      pageType:"contact",
+      pageId:"5",
       name: "Contact",
       url: "contact.html"
     },
     {
-      pageType:"forms",
-      name: "Forms",
-      url: "forms.html"
-    }
-    /*
-    {
       name: "Other",
       items: [
           {
-            pageType:"forms",
+            pageId:"3",
             name: "Forms",
             url: "forms.html"
           }
       ]
-    },*/
+    },
   ],
   categories: [
     {

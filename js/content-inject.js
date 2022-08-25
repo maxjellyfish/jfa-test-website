@@ -4,6 +4,7 @@ export default function () {
 
   const urlParams = new URLSearchParams(document.location.search)
   const pageType = $('meta[name="page-type"]').attr('content')
+  const pageId = $('meta[name="page-id"]').attr('content')
 
   window.pageData = window.pageData || {};
   window.pageData.pageType = pageType;
@@ -41,7 +42,7 @@ export default function () {
     case 'confirmation':
       initConfirmation()
       break;
-    case 'blog-index':
+    case 'blog':
       initBlog()
       break;
     default:
@@ -550,25 +551,34 @@ export default function () {
     // Main nav
     const navContainer = $(".main-menu.navbar-nav")
     navContainer.empty()
-    /*
-    const navEls = db.nav.map(item => $(/--html --/`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`))
-    */
     
+    const navEls = db.nav.map(item => {
 
-    const navEls = db.nav.map(function(item){
-      if(typeof item.items != 'undefined' && item.items.length > 0) {
-        var html = /*html */`<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Other <span class="caret"></span></a><ul class="dropdown-menu">`
-        for(var i=0; i<item.items.length; i++){
-          html += `<li><a id="main-menu-${item.items[i].pageType}" href="${item.items[i].url}" class="nav-item nav-link ${pageType === item.items[i].pageType ? "active" : ""}">${item.items[i].name}</li></a>`
-        }
-        html += `</ul>`
-        return $(html);
-
-      } else {
-        return $(/*html */`<a id="main-menu-${item.pageType}" href="${item.url}" class="nav-item nav-link ${pageType === item.pageType ? "active" : ""}">${item.name}</a>`);
+      function getLink(item){
+        return $(/*html */`<a href="${item.url}" class="nav-link">${item.name}</a>`)
       }
-      
+
+      const root = $(/*html */`<div class="nav-item ${pageId === item.pageId ? "active" : ""}"></div>`)
+
+      if(item.items){
+        root.append($(/*html */`
+          <div class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ${item.name}
+            </a>
+            <div class="dropdown-menu m-0">
+              ${item.items.map(child => `<a class="dropdown-item" href="${child.url}">${child.name}</a>`)}
+            </div>
+          </div>
+        `))
+      } else {
+        root.append(getLink(item))
+      }
+
+      return root
+
     })
+    
     navContainer.append(navEls)
 
     // User
