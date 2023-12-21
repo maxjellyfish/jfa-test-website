@@ -697,6 +697,7 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
         ob.ecommerce.value = purchase.total;
         ob.ecommerce.tax = Math.round(purchase.total*.09);
         ob.ecommerce.shipping = purchase.shipping
+        ob.ecommerce.purchase_email = purchase.billing_email
         ob.ecommerce.payment_type = purchase.payment_method;
         //ob.ecommerce.coupon = ""
         
