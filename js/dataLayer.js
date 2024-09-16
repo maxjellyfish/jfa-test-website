@@ -766,7 +766,7 @@ import {sha256} from "./utils.js"
                 //"item_variant": "item_variant",
                 "price": products[i].price,
                 "item_original_price" : products[i].originalPrice,
-                "quantity": "quantity",
+                "quantity": products[i].qty || 1,
                 "item_img" : products[i].img
             });
         }
