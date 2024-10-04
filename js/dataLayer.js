@@ -5,8 +5,9 @@ import db from "./db.js"
 import BaseDataHandler from "./dataHandlers/BaseDataHandler.class.js";
 import GtmGa4DataHandler from "./dataHandlers/GtmGa4DataHandler.class.js";
 import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
+import {sha256} from "./utils.js";
 
-(function ($) {
+(async function ($) {
     "use strict";
 
     window.dataLayer = window.dataLayer || []
@@ -751,6 +752,7 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
         ob.ecommerce.value = purchase.total;
         ob.ecommerce.tax = Math.round(purchase.total*.09);
         ob.ecommerce.shipping = purchase.shipping
+        ob.ecommerce.purchase_email_sha256 = await sha256(purchase.billing_email);
         ob.ecommerce.payment_type = purchase.payment_method;
         //ob.ecommerce.coupon = ""
         
@@ -949,4 +951,3 @@ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
 
     // <--- VIDEO ACTIONS END --->
 })(jQuery);
-
