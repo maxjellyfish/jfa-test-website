@@ -1,0 +1,800 @@
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_alert.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_badge.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_breadcrumb.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_button-group.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_buttons.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_card.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_carousel.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_close.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_code.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_custom-forms.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_dropdown.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_forms.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_functions.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_grid.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_images.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_input-group.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_jumbotron.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_list-group.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_media.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_mixins.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_modal.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_nav.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_navbar.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_pagination.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_popover.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_print.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_progress.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_reboot.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_root.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_spinners.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_tables.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_toasts.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_tooltip.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_transitions.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_type.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_utilities.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/_variables.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/bootstrap-grid.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/bootstrap-reboot.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/bootstrap.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_alert.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_background-variant.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_badge.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_border-radius.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_box-shadow.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_breakpoints.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_buttons.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_caret.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_clearfix.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_deprecate.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_float.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_forms.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_gradients.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_grid-framework.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_grid.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_hover.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_image.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_list-group.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_lists.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_nav-divider.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_pagination.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_reset-text.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_resize.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_screen-reader.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_size.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_table-row.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_text-emphasis.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_text-hide.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_text-truncate.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_transition.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/mixins/_visibility.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_align.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_background.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_borders.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_clearfix.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_display.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_embed.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_flex.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_float.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_interactions.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_overflow.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_position.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_screenreaders.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_shadows.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_sizing.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_spacing.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_stretched-link.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_text.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/utilities/_visibility.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/bootstrap/scss/vendor/_rfs.scss', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scss/style.scss', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/checkout.html b/checkout.html[m
+[1mindex 6baf941..1602465 100644[m
+[1m--- a/checkout.html[m
+[1m+++ b/checkout.html[m
+[36m@@ -125,7 +125,7 @@[m
+         <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">[m
+             <h1 class="font-weight-semi-bold text-uppercase mb-3">Checkout</h1>[m
+             <div class="d-inline-flex">[m
+[31m-                <p class="m-0"><a href="index.html">Home</a></p>[m
+[32m+[m[32m                <p class="m-0"><a href="">Home</a></p>[m
+                 <p class="m-0 px-2">-</p>[m
+                 <p class="m-0">Checkout</p>[m
+             </div>[m
+[1mdiff --git a/detail.html b/detail.html[m
+[1mindex dda23c7..5d53b0d 100644[m
+[1m--- a/detail.html[m
+[1m+++ b/detail.html[m
+[36m@@ -128,7 +128,7 @@[m
+             <div class="breadcrumb-links d-inline-flex">[m
+                 <p class="m-0"><a href="index.html">Home</a></p>[m
+                 <p class="m-0 px-2">-</p>[m
+[31m-                <p class="m-0">Product Detail</p>[m
+[32m+[m[32m                <p id="back-to-cat" class="m-0">Product Detail</p>[m
+             </div>[m
+         </div>[m
+     </div>[m
+[1mdiff --git a/index.html b/index.html[m
+[1mindex dea3a4b..10d59ea 100644[m
+[1m--- a/index.html[m
+[1m+++ b/index.html[m
+[36m@@ -9,7 +9,7 @@[m
+     <meta content="" name="description">[m
+     <meta content="home" name="page-type">[m
+     <meta content="2" name="page-id">[m
+[31m-[m
+[32m+[m[32m    <meta name="p:domain_verify" content="14f09b0bdd80311cfb9fb50b62e6f5aa"/>[m
+     <link href="img/favicon.ico" rel="icon">[m
+ [m
+     <link rel="preconnect" href="https://fonts.gstatic.com">[m
+[36m@@ -316,7 +316,6 @@[m
+             </div>[m
+         </div>[m
+     </div>[m
+[31m- [m
+     <a href="javascript:void(0)" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>[m
+ [m
+ [m
+[1mdiff --git a/js/dataLayer.js b/js/dataLayer.js[m
+[1mindex df2e080..c5074f4 100644[m
+[1m--- a/js/dataLayer.js[m
+[1m+++ b/js/dataLayer.js[m
+[36m@@ -5,9 +5,8 @@[m [mimport db from "./db.js"[m
+ import BaseDataHandler from "./dataHandlers/BaseDataHandler.class.js";[m
+ import GtmGa4DataHandler from "./dataHandlers/GtmGa4DataHandler.class.js";[m
+ import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";[m
+[31m-import {sha256} from "./utils.js"[m
+ [m
+[31m-(async function ($) {[m
+[32m+[m[32m(function ($) {[m
+     "use strict";[m
+ [m
+     window.dataLayer = window.dataLayer || [][m
+[36m@@ -153,7 +152,7 @@[m [mimport {sha256} from "./utils.js"[m
+                 //"item_variant": "item_variant",[m
+                 "price": cart[i].price,[m
+                 "item_original_price" : cart[i].originalPrice,[m
+[31m-                "quantity": "quantity",[m
+[32m+[m[32m                "quantity": 1,[m
+                 "item_img" : cart[i].img[m
+             });[m
+             total += (cart[i].price * cart[i].qty);[m
+[36m@@ -406,10 +405,64 @@[m [mimport {sha256} from "./utils.js"[m
+     $("#site-search-form").submit(function(event){[m
+         [m
+         var searchTerm = $(this).find("#search-term").val();[m
+[32m+[m[32m        var itemList = [[m
+[32m+[m[32m            {[m
+[32m+[m[32m              index:0,[m
+[32m+[m[32m              item_id:"shirts-1",[m
+[32m+[m[32m              item_name: "Colourless Stylish Top",[m
+[32m+[m[32m              item_list_name: "Search",[m
+[32m+[m[32m              item_list_id: "search",[m
+[32m+[m[32m              item_category: 'shirts',[m
+[32m+[m[32m              img: "img/product-1.jpg",[m
+[32m+[m[32m              price: 123,[m
+[32m+[m[32m              quantity:1,[m
+[32m+[m[32m              originalPrice: 150,[m
+[32m+[m[32m              brand : 'jellyfish',[m
+[32m+[m[32m              imgs: ["img/product-1.jpg", "img/product-1.jpg"][m
+[32m+[m[32m            },[m
+[32m+[m[32m            {[m
+[32m+[m[32m              index:1,[m
+[32m+[m[32m              item_id:"bags-1",[m
+[32m+[m[32m              item_name: "Wolf Face Bag",[m
+[32m+[m[32m              item_list_name: "Search",[m
+[32m+[m[32m              item_list_id: "search",[m
+[32m+[m[32m              item_category: 'bags',[m
+[32m+[m[32m              img: "img/product-2.jpg",[m
+[32m+[m[32m              price: 234,[m
+[32m+[m[32m              quantity:1,[m
+[32m+[m[32m              originalPrice: 470,[m
+[32m+[m[32m              brand : 'jellyfish',[m
+[32m+[m[32m              imgs: ["img/product-2.jpg", "img/product-2.jpg"][m
+[32m+[m[32m            },[m
+[32m+[m[32m            {[m
+[32m+[m[32m              index:2,[m
+[32m+[m[32m              item_id:"shoes-1",[m
+[32m+[m[32m              item_name: "Merrell Shoes",[m
+[32m+[m[32m              item_list_name: "Search",[m
+[32m+[m[32m              item_list_id: "search",[m
+[32m+[m[32m              item_category: 'shoes',[m
+[32m+[m[32m              img: "img/product-3.jpg",[m
+[32m+[m[32m              price: 80,[m
+[32m+[m[32m              quantity:1,[m
+[32m+[m[32m              originalPrice: 90,[m
+[32m+[m[32m              brand : 'jellyfish',[m
+[32m+[m[32m              imgs: ["img/product-3.jpg", "img/product-3.jpg"][m
+[32m+[m[32m            }[m
+[32m+[m[32m        ];[m
+[32m+[m[32m        var ecommerce = {};[m
+[32m+[m[32m        ecommerce.items = itemList;[m
+         var ob = createEventData("search");[m
+         ob["search_term"] = searchTerm;[m
+         ob["search_type"] = "site_search";[m
+[32m+[m[32m        ob["ecommerce"] = ecommerce;[m
+         track(ob);[m
+[32m+[m[32m        var ab = createEventData("view_item_list");[m
+[32m+[m[32m        ab["search_term"] = searchTerm;[m
+[32m+[m[32m        ab["search_type"] = "site_search";[m
+[32m+[m[32m        ab["item_list_name"] = "Search";[m
+[32m+[m[32m        ab["item_list_id"] = "search";[m
+[32m+[m[32m        ab["ecommerce"] = ecommerce;[m
+[32m+[m[32m        track(ab);[m
+         alert("user search submitted");[m
+         event.preventDefault();[m
+         return false;[m
+[36m@@ -698,7 +751,6 @@[m [mimport {sha256} from "./utils.js"[m
+         ob.ecommerce.value = purchase.total;[m
+         ob.ecommerce.tax = Math.round(purchase.total*.09);[m
+         ob.ecommerce.shipping = purchase.shipping[m
+[31m-        ob.ecommerce.purchase_email_sha256 = await sha256(purchase.billing_email)[m
+         ob.ecommerce.payment_type = purchase.payment_method;[m
+         //ob.ecommerce.coupon = ""[m
+         [m
+[1mdiff --git a/js/db.js b/js/db.js[m
+[1mindex dbdae5f..242696c 100644[m
+[1m--- a/js/db.js[m
+[1m+++ b/js/db.js[m
+[36m@@ -108,6 +108,11 @@[m [mconst data = {[m
+       id: "shoes",[m
+       name: "Shoes",[m
+       img: "img/cat-6.jpg"[m
+[32m+[m[32m    },[m
+[32m+[m[32m    {[m
+[32m+[m[32m      id: "other",[m
+[32m+[m[32m      name: "Other",[m
+[32m+[m[32m      img: "img/cat-2.jpg"[m
+     }[m
+   ],[m
+   products: [[m
+[36m@@ -141,6 +146,506 @@[m [mconst data = {[m
+       brand : 'jellyfish',[m
+       imgs: ["img/product-3.jpg", "img/product-3.jpg"][m
+     },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0001",[m
+[32m+[m[32m      "name": "Camping Kit",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_1.png",[m
+[32m+[m[32m      "price": 100,[m
+[32m+[m[32m      "originalPrice": 125,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_1.png","img/product_1.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0002",[m
+[32m+[m[32m      "name": "Skin Care",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_2.png",[m
+[32m+[m[32m      "price": 419,[m
+[32m+[m[32m      "originalPrice": 524,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_2.png","img/product_2.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0003",[m
+[32m+[m[32m      "name": "Hemp Seed",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_3.png",[m
+[32m+[m[32m      "price": 44,[m
+[32m+[m[32m      "originalPrice": 55,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_3.png","img/product_3.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0004",[m
+[32m+[m[32m      "name": "Headphones",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_4.png",[m
+[32m+[m[32m      "price": 158,[m
+[32m+[m[32m      "originalPrice": 198,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_4.png","img/product_4.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0005",[m
+[32m+[m[32m      "name": "Coffee",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_5.png",[m
+[32m+[m[32m      "price": 303,[m
+[32m+[m[32m      "originalPrice": 379,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_5.png","img/product_5.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0006",[m
+[32m+[m[32m      "name": "Lipstick",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_6.png",[m
+[32m+[m[32m      "price": 370,[m
+[32m+[m[32m      "originalPrice": 463,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_6.png","img/product_6.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0007",[m
+[32m+[m[32m      "name": "Headphones",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_7.png",[m
+[32m+[m[32m      "price": 214,[m
+[32m+[m[32m      "originalPrice": 268,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_7.png","img/product_7.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0008",[m
+[32m+[m[32m      "name": "Sunglasses",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_8.png",[m
+[32m+[m[32m      "price": 229,[m
+[32m+[m[32m      "originalPrice": 287,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_8.png","img/product_8.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0009",[m
+[32m+[m[32m      "name": "Cupcake",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_9.png",[m
+[32m+[m[32m      "price": 43,[m
+[32m+[m[32m      "originalPrice": 54,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_9.png","img/product_9.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0010",[m
+[32m+[m[32m      "name": "Skin Care",[m
+[32m+[m[32m      "categoryId": 'shirts',[m
+[32m+[m[32m      "img": "img/product_10.png",[m
+[32m+[m[32m      "price": 149,[m
+[32m+[m[32m      "originalPrice": 187,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_10.png","img/product_10.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0011",[m
+[32m+[m[32m      "name": "Skin Care",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_11.png",[m
+[32m+[m[32m      "price": 78,[m
+[32m+[m[32m      "originalPrice": 98,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_11.png","img/product_11.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0012",[m
+[32m+[m[32m      "name": "iWatch",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_12.png",[m
+[32m+[m[32m      "price": 374,[m
+[32m+[m[32m      "originalPrice": 468,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_12.png","img/product_12.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0013",[m
+[32m+[m[32m      "name": "Camera",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_13.png",[m
+[32m+[m[32m      "price": 276,[m
+[32m+[m[32m      "originalPrice": 345,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_13.png","img/product_13.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0014",[m
+[32m+[m[32m      "name": "iWatch",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_14.png",[m
+[32m+[m[32m      "price": 97,[m
+[32m+[m[32m      "originalPrice": 122,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_14.png","img/product_14.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0015",[m
+[32m+[m[32m      "name": "Burbon Whiskey",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_15.png",[m
+[32m+[m[32m      "price": 489,[m
+[32m+[m[32m      "originalPrice": 612,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_15.png","img/product_15.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0016",[m
+[32m+[m[32m      "name": "iWatch",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_16.png",[m
+[32m+[m[32m      "price": 188,[m
+[32m+[m[32m      "originalPrice": 235,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_16.png","img/product_16.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0017",[m
+[32m+[m[32m      "name": "Herbs",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_17.png",[m
+[32m+[m[32m      "price": 446,[m
+[32m+[m[32m      "originalPrice": 558,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_17.png","img/product_17.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0018",[m
+[32m+[m[32m      "name": "A Single Show",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_18.png",[m
+[32m+[m[32m      "price": 341,[m
+[32m+[m[32m      "originalPrice": 427,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_18.png","img/product_18.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0019",[m
+[32m+[m[32m      "name": "Poliroid Camera",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_19.png",[m
+[32m+[m[32m      "price": 470,[m
+[32m+[m[32m      "originalPrice": 588,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_19.png","img/product_19.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0020",[m
+[32m+[m[32m      "name": "Chanel No5",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_20.png",[m
+[32m+[m[32m      "price": 183,[m
+[32m+[m[32m      "originalPrice": 229,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_20.png","img/product_20.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0021",[m
+[32m+[m[32m      "name": "Cactus",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_21.png",[m
+[32m+[m[32m      "price": 241,[m
+[32m+[m[32m      "originalPrice": 302,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_21.png","img/product_21.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0022",[m
+[32m+[m[32m      "name": "Sunglasses",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_22.png",[m
+[32m+[m[32m      "price": 46,[m
+[32m+[m[32m      "originalPrice": 58,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_22.png","img/product_22.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0023",[m
+[32m+[m[32m      "name": "Little Car",[m
+[32m+[m[32m      "categoryId": 'bags',[m
+[32m+[m[32m      "img": "img/product_23.png",[m
+[32m+[m[32m      "price": 458,[m
+[32m+[m[32m      "originalPrice": 573,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_23.png","img/product_23.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0024",[m
+[32m+[m[32m      "name": "Amazon Echo",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_24.png",[m
+[32m+[m[32m      "price": 225,[m
+[32m+[m[32m      "originalPrice": 282,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_24.png","img/product_24.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0025",[m
+[32m+[m[32m      "name": "Two Shoes",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_25.png",[m
+[32m+[m[32m      "price": 126,[m
+[32m+[m[32m      "originalPrice": 158,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_25.png","img/product_25.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0026",[m
+[32m+[m[32m      "name": "A Shoe On Peaches",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_26.png",[m
+[32m+[m[32m      "price": 227,[m
+[32m+[m[32m      "originalPrice": 284,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_26.png","img/product_26.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0027",[m
+[32m+[m[32m      "name": "Backpack",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_27.png",[m
+[32m+[m[32m      "price": 139,[m
+[32m+[m[32m      "originalPrice": 174,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_27.png","img/product_27.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0028",[m
+[32m+[m[32m      "name": "Backpack",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_28.png",[m
+[32m+[m[32m      "price": 16,[m
+[32m+[m[32m      "originalPrice": 20,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_28.png","img/product_28.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0029",[m
+[32m+[m[32m      "name": "Drink Bottle",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_29.png",[m
+[32m+[m[32m      "price": 440,[m
+[32m+[m[32m      "originalPrice": 550,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_29.png","img/product_29.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0030",[m
+[32m+[m[32m      "name": "Jenuin",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_30.png",[m
+[32m+[m[32m      "price": 459,[m
+[32m+[m[32m      "originalPrice": 574,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_30.png","img/product_30.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0031",[m
+[32m+[m[32m      "name": "Brown Bag",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_31.png",[m
+[32m+[m[32m      "price": 488,[m
+[32m+[m[32m      "originalPrice": 610,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_31.png","img/product_31.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0032",[m
+[32m+[m[32m      "name": "Cleaning Products",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_32.png",[m
+[32m+[m[32m      "price": 275,[m
+[32m+[m[32m      "originalPrice": 344,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_32.png","img/product_32.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0033",[m
+[32m+[m[32m      "name": "Wired Headphones",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_33.png",[m
+[32m+[m[32m      "price": 73,[m
+[32m+[m[32m      "originalPrice": 92,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_33.png","img/product_33.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0034",[m
+[32m+[m[32m      "name": "EarPods",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_34.png",[m
+[32m+[m[32m      "price": 273,[m
+[32m+[m[32m      "originalPrice": 342,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_34.png","img/product_34.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0035",[m
+[32m+[m[32m      "name": "Wine Glass",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_35.png",[m
+[32m+[m[32m      "price": 25,[m
+[32m+[m[32m      "originalPrice": 32,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_35.png","img/product_35.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0036",[m
+[32m+[m[32m      "name": "Messy Bag",[m
+[32m+[m[32m      "categoryId": 'shoes',[m
+[32m+[m[32m      "img": "img/product_36.png",[m
+[32m+[m[32m      "price": 249,[m
+[32m+[m[32m      "originalPrice": 312,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_36.png","img/product_36.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0037",[m
+[32m+[m[32m      "name": "Gameboy",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_37.png",[m
+[32m+[m[32m      "price": 255,[m
+[32m+[m[32m      "originalPrice": 319,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_37.png","img/product_37.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0038",[m
+[32m+[m[32m      "name": "Black Bike",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_38.png",[m
+[32m+[m[32m      "price": 44,[m
+[32m+[m[32m      "originalPrice": 55,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_38.png","img/product_38.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0039",[m
+[32m+[m[32m      "name": "Blue Heals",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_39.png",[m
+[32m+[m[32m      "price": 110,[m
+[32m+[m[32m      "originalPrice": 138,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_39.png","img/product_39.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0040",[m
+[32m+[m[32m      "name": "Pepsi",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_40.png",[m
+[32m+[m[32m      "price": 271,[m
+[32m+[m[32m      "originalPrice": 339,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_40.png","img/product_40.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0041",[m
+[32m+[m[32m      "name": "Mouse",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_41.png",[m
+[32m+[m[32m      "price": 480,[m
+[32m+[m[32m      "originalPrice": 600,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_41.png","img/product_41.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0042",[m
+[32m+[m[32m      "name": "Watch",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_42.png",[m
+[32m+[m[32m      "price": 247,[m
+[32m+[m[32m      "originalPrice": 309,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_42.png","img/product_42.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0043",[m
+[32m+[m[32m      "name": "Two watches",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_43.png",[m
+[32m+[m[32m      "price": 102,[m
+[32m+[m[32m      "originalPrice": 128,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_43.png","img/product_43.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0044",[m
+[32m+[m[32m      "name": "Three Doors",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_44.png",[m
+[32m+[m[32m      "price": 187,[m
+[32m+[m[32m      "originalPrice": 234,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_44.png","img/product_44.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0045",[m
+[32m+[m[32m      "name": "Stool",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_45.png",[m
+[32m+[m[32m      "price": 49,[m
+[32m+[m[32m      "originalPrice": 62,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_45.png","img/product_45.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0046",[m
+[32m+[m[32m      "name": "Poptop Drink Bottle",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_46.png",[m
+[32m+[m[32m      "price": 117,[m
+[32m+[m[32m      "originalPrice": 147,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_46.png","img/product_46.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0047",[m
+[32m+[m[32m      "name": "Leaves",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_47.png",[m
+[32m+[m[32m      "price": 74,[m
+[32m+[m[32m      "originalPrice": 93,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_47.png","img/product_47.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0048",[m
+[32m+[m[32m      "name": "Backpack",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_48.png",[m
+[32m+[m[32m      "price": 142,[m
+[32m+[m[32m      "originalPrice": 178,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_48.png","img/product_48.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0049",[m
+[32m+[m[32m      "name": "Canada Dry",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_49.png",[m
+[32m+[m[32m      "price": 37,[m
+[32m+[m[32m      "originalPrice": 47,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_49.png","img/product_49.png"][m
+[32m+[m[32m  },[m
+[32m+[m[32m  {[m
+[32m+[m[32m      "id": "SKU0050",[m
+[32m+[m[32m      "name": "Skin Care",[m
+[32m+[m[32m      "categoryId": 'other',[m
+[32m+[m[32m      "img": "img/product_50.png",[m
+[32m+[m[32m      "price": 454,[m
+[32m+[m[32m      "originalPrice": 568,[m
+[32m+[m[32m      "brand": "jellyfish",[m
+[32m+[m[32m      "imgs": ["img/product_50.png","img/product_50.png"][m
+[32m+[m[32m  }[m
+   ],[m
+   blog:{[m
+     posts: [[m
+[1mdiff --git a/js/gtm-loader.js b/js/gtm-loader.js[m
+[1mindex e7ada8f..9d69840 100644[m
+[1m--- a/js/gtm-loader.js[m
+[1m+++ b/js/gtm-loader.js[m
+[36m@@ -1,7 +1,14 @@[m
+ window.params = new Proxy(new URLSearchParams(window.location.search), {[m
+   get: (searchParams, prop) => searchParams.get(prop),[m
+ });[m
+[31m-window.gtmId = 'GTM-TBJ4BW4'; //GTM-XXXXXX[m
+[32m+[m
+[32m+[m[32mwindow.gtmId = 'GTM-TBJ4BW4';[m
+[32m+[m[32mwindow.loadDomain = 'https://www.googletagmanager.com/';[m
+[32m+[m
+[32m+[m[32mif(window.location.host == 'shop.iamthefear.com'){[m
+[32m+[m[32m  window.gtmId = 'GTM-T596F53';[m
+[32m+[m[32mwindow.loadDomain = 'https://sgtm.iamthefear.com/';[m
+[32m+[m[32m}[m
+ [m
+ if (window.params && typeof window.params.gtmId != 'undefined' && window.params.gtmId && window.params.gtmId != 'null') {[m
+   window.gtmId = window.params.gtmId;[m
+[36m@@ -14,5 +21,5 @@[m [mif (window.params && typeof window.params.gtmId != 'undefined' && window.params.[m
+ (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':[m
+ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],[m
+ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=[m
+[31m-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);[m
+[32m+[m[32mwindow.loadDomain+'gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);[m
+ })(window,document,'script','dataLayer',window.gtmId);[m
+\ No newline at end of file[m
+[1mdiff --git a/js/utils.js b/js/utils.js[m
+[1mindex c69dba0..e69de29 100644[m
+[1m--- a/js/utils.js[m
+[1m+++ b/js/utils.js[m
+[36m@@ -1,7 +0,0 @@[m
+[31m-export const sha256 = async (value) => {[m
+[31m-    const utf8 = new TextEncoder().encode(value);[m
+[31m-    const hashBuffer = await crypto.subtle.digest('SHA-256', utf8)[m
+[31m-    const hashArray = Array.from(new Uint8Array(hashBuffer));[m
+[31m-    const hashHex = hashArray.map((bytes) => bytes.toString(16).padStart(2, '0')).join('');[m
+[31m-    return hashHex;[m
+[31m-}[m
+\ No newline at end of file[m

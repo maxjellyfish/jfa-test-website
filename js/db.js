@@ -108,6 +108,11 @@ const data = {
       id: "shoes",
       name: "Shoes",
       img: "img/cat-6.jpg"
+    },
+    {
+      id: "other",
+      name: "Other",
+      img: "img/cat-2.jpg"
     }
   ],
   products: [
@@ -141,6 +146,506 @@ const data = {
       brand : 'jellyfish',
       imgs: ["img/product-3.jpg", "img/product-3.jpg"]
     },
+  {
+      "id": "SKU0001",
+      "name": "Camping Kit",
+      "categoryId": 'other',
+      "img": "img/product_1.png",
+      "price": 100,
+      "originalPrice": 125,
+      "brand": "jellyfish",
+      "imgs": ["img/product_1.png","img/product_1.png"]
+  },
+  {
+      "id": "SKU0002",
+      "name": "Skin Care",
+      "categoryId": 'bags',
+      "img": "img/product_2.png",
+      "price": 419,
+      "originalPrice": 524,
+      "brand": "jellyfish",
+      "imgs": ["img/product_2.png","img/product_2.png"]
+  },
+  {
+      "id": "SKU0003",
+      "name": "Hemp Seed",
+      "categoryId": 'shirts',
+      "img": "img/product_3.png",
+      "price": 44,
+      "originalPrice": 55,
+      "brand": "jellyfish",
+      "imgs": ["img/product_3.png","img/product_3.png"]
+  },
+  {
+      "id": "SKU0004",
+      "name": "Headphones",
+      "categoryId": 'shirts',
+      "img": "img/product_4.png",
+      "price": 158,
+      "originalPrice": 198,
+      "brand": "jellyfish",
+      "imgs": ["img/product_4.png","img/product_4.png"]
+  },
+  {
+      "id": "SKU0005",
+      "name": "Coffee",
+      "categoryId": 'shirts',
+      "img": "img/product_5.png",
+      "price": 303,
+      "originalPrice": 379,
+      "brand": "jellyfish",
+      "imgs": ["img/product_5.png","img/product_5.png"]
+  },
+  {
+      "id": "SKU0006",
+      "name": "Lipstick",
+      "categoryId": 'shirts',
+      "img": "img/product_6.png",
+      "price": 370,
+      "originalPrice": 463,
+      "brand": "jellyfish",
+      "imgs": ["img/product_6.png","img/product_6.png"]
+  },
+  {
+      "id": "SKU0007",
+      "name": "Headphones",
+      "categoryId": 'shirts',
+      "img": "img/product_7.png",
+      "price": 214,
+      "originalPrice": 268,
+      "brand": "jellyfish",
+      "imgs": ["img/product_7.png","img/product_7.png"]
+  },
+  {
+      "id": "SKU0008",
+      "name": "Sunglasses",
+      "categoryId": 'shirts',
+      "img": "img/product_8.png",
+      "price": 229,
+      "originalPrice": 287,
+      "brand": "jellyfish",
+      "imgs": ["img/product_8.png","img/product_8.png"]
+  },
+  {
+      "id": "SKU0009",
+      "name": "Cupcake",
+      "categoryId": 'shirts',
+      "img": "img/product_9.png",
+      "price": 43,
+      "originalPrice": 54,
+      "brand": "jellyfish",
+      "imgs": ["img/product_9.png","img/product_9.png"]
+  },
+  {
+      "id": "SKU0010",
+      "name": "Skin Care",
+      "categoryId": 'shirts',
+      "img": "img/product_10.png",
+      "price": 149,
+      "originalPrice": 187,
+      "brand": "jellyfish",
+      "imgs": ["img/product_10.png","img/product_10.png"]
+  },
+  {
+      "id": "SKU0011",
+      "name": "Skin Care",
+      "categoryId": 'bags',
+      "img": "img/product_11.png",
+      "price": 78,
+      "originalPrice": 98,
+      "brand": "jellyfish",
+      "imgs": ["img/product_11.png","img/product_11.png"]
+  },
+  {
+      "id": "SKU0012",
+      "name": "iWatch",
+      "categoryId": 'bags',
+      "img": "img/product_12.png",
+      "price": 374,
+      "originalPrice": 468,
+      "brand": "jellyfish",
+      "imgs": ["img/product_12.png","img/product_12.png"]
+  },
+  {
+      "id": "SKU0013",
+      "name": "Camera",
+      "categoryId": 'bags',
+      "img": "img/product_13.png",
+      "price": 276,
+      "originalPrice": 345,
+      "brand": "jellyfish",
+      "imgs": ["img/product_13.png","img/product_13.png"]
+  },
+  {
+      "id": "SKU0014",
+      "name": "iWatch",
+      "categoryId": 'bags',
+      "img": "img/product_14.png",
+      "price": 97,
+      "originalPrice": 122,
+      "brand": "jellyfish",
+      "imgs": ["img/product_14.png","img/product_14.png"]
+  },
+  {
+      "id": "SKU0015",
+      "name": "Burbon Whiskey",
+      "categoryId": 'bags',
+      "img": "img/product_15.png",
+      "price": 489,
+      "originalPrice": 612,
+      "brand": "jellyfish",
+      "imgs": ["img/product_15.png","img/product_15.png"]
+  },
+  {
+      "id": "SKU0016",
+      "name": "iWatch",
+      "categoryId": 'bags',
+      "img": "img/product_16.png",
+      "price": 188,
+      "originalPrice": 235,
+      "brand": "jellyfish",
+      "imgs": ["img/product_16.png","img/product_16.png"]
+  },
+  {
+      "id": "SKU0017",
+      "name": "Herbs",
+      "categoryId": 'bags',
+      "img": "img/product_17.png",
+      "price": 446,
+      "originalPrice": 558,
+      "brand": "jellyfish",
+      "imgs": ["img/product_17.png","img/product_17.png"]
+  },
+  {
+      "id": "SKU0018",
+      "name": "A Single Show",
+      "categoryId": 'bags',
+      "img": "img/product_18.png",
+      "price": 341,
+      "originalPrice": 427,
+      "brand": "jellyfish",
+      "imgs": ["img/product_18.png","img/product_18.png"]
+  },
+  {
+      "id": "SKU0019",
+      "name": "Poliroid Camera",
+      "categoryId": 'bags',
+      "img": "img/product_19.png",
+      "price": 470,
+      "originalPrice": 588,
+      "brand": "jellyfish",
+      "imgs": ["img/product_19.png","img/product_19.png"]
+  },
+  {
+      "id": "SKU0020",
+      "name": "Chanel No5",
+      "categoryId": 'bags',
+      "img": "img/product_20.png",
+      "price": 183,
+      "originalPrice": 229,
+      "brand": "jellyfish",
+      "imgs": ["img/product_20.png","img/product_20.png"]
+  },
+  {
+      "id": "SKU0021",
+      "name": "Cactus",
+      "categoryId": 'bags',
+      "img": "img/product_21.png",
+      "price": 241,
+      "originalPrice": 302,
+      "brand": "jellyfish",
+      "imgs": ["img/product_21.png","img/product_21.png"]
+  },
+  {
+      "id": "SKU0022",
+      "name": "Sunglasses",
+      "categoryId": 'bags',
+      "img": "img/product_22.png",
+      "price": 46,
+      "originalPrice": 58,
+      "brand": "jellyfish",
+      "imgs": ["img/product_22.png","img/product_22.png"]
+  },
+  {
+      "id": "SKU0023",
+      "name": "Little Car",
+      "categoryId": 'bags',
+      "img": "img/product_23.png",
+      "price": 458,
+      "originalPrice": 573,
+      "brand": "jellyfish",
+      "imgs": ["img/product_23.png","img/product_23.png"]
+  },
+  {
+      "id": "SKU0024",
+      "name": "Amazon Echo",
+      "categoryId": 'shoes',
+      "img": "img/product_24.png",
+      "price": 225,
+      "originalPrice": 282,
+      "brand": "jellyfish",
+      "imgs": ["img/product_24.png","img/product_24.png"]
+  },
+  {
+      "id": "SKU0025",
+      "name": "Two Shoes",
+      "categoryId": 'shoes',
+      "img": "img/product_25.png",
+      "price": 126,
+      "originalPrice": 158,
+      "brand": "jellyfish",
+      "imgs": ["img/product_25.png","img/product_25.png"]
+  },
+  {
+      "id": "SKU0026",
+      "name": "A Shoe On Peaches",
+      "categoryId": 'shoes',
+      "img": "img/product_26.png",
+      "price": 227,
+      "originalPrice": 284,
+      "brand": "jellyfish",
+      "imgs": ["img/product_26.png","img/product_26.png"]
+  },
+  {
+      "id": "SKU0027",
+      "name": "Backpack",
+      "categoryId": 'shoes',
+      "img": "img/product_27.png",
+      "price": 139,
+      "originalPrice": 174,
+      "brand": "jellyfish",
+      "imgs": ["img/product_27.png","img/product_27.png"]
+  },
+  {
+      "id": "SKU0028",
+      "name": "Backpack",
+      "categoryId": 'shoes',
+      "img": "img/product_28.png",
+      "price": 16,
+      "originalPrice": 20,
+      "brand": "jellyfish",
+      "imgs": ["img/product_28.png","img/product_28.png"]
+  },
+  {
+      "id": "SKU0029",
+      "name": "Drink Bottle",
+      "categoryId": 'shoes',
+      "img": "img/product_29.png",
+      "price": 440,
+      "originalPrice": 550,
+      "brand": "jellyfish",
+      "imgs": ["img/product_29.png","img/product_29.png"]
+  },
+  {
+      "id": "SKU0030",
+      "name": "Jenuin",
+      "categoryId": 'shoes',
+      "img": "img/product_30.png",
+      "price": 459,
+      "originalPrice": 574,
+      "brand": "jellyfish",
+      "imgs": ["img/product_30.png","img/product_30.png"]
+  },
+  {
+      "id": "SKU0031",
+      "name": "Brown Bag",
+      "categoryId": 'shoes',
+      "img": "img/product_31.png",
+      "price": 488,
+      "originalPrice": 610,
+      "brand": "jellyfish",
+      "imgs": ["img/product_31.png","img/product_31.png"]
+  },
+  {
+      "id": "SKU0032",
+      "name": "Cleaning Products",
+      "categoryId": 'shoes',
+      "img": "img/product_32.png",
+      "price": 275,
+      "originalPrice": 344,
+      "brand": "jellyfish",
+      "imgs": ["img/product_32.png","img/product_32.png"]
+  },
+  {
+      "id": "SKU0033",
+      "name": "Wired Headphones",
+      "categoryId": 'shoes',
+      "img": "img/product_33.png",
+      "price": 73,
+      "originalPrice": 92,
+      "brand": "jellyfish",
+      "imgs": ["img/product_33.png","img/product_33.png"]
+  },
+  {
+      "id": "SKU0034",
+      "name": "EarPods",
+      "categoryId": 'shoes',
+      "img": "img/product_34.png",
+      "price": 273,
+      "originalPrice": 342,
+      "brand": "jellyfish",
+      "imgs": ["img/product_34.png","img/product_34.png"]
+  },
+  {
+      "id": "SKU0035",
+      "name": "Wine Glass",
+      "categoryId": 'shoes',
+      "img": "img/product_35.png",
+      "price": 25,
+      "originalPrice": 32,
+      "brand": "jellyfish",
+      "imgs": ["img/product_35.png","img/product_35.png"]
+  },
+  {
+      "id": "SKU0036",
+      "name": "Messy Bag",
+      "categoryId": 'shoes',
+      "img": "img/product_36.png",
+      "price": 249,
+      "originalPrice": 312,
+      "brand": "jellyfish",
+      "imgs": ["img/product_36.png","img/product_36.png"]
+  },
+  {
+      "id": "SKU0037",
+      "name": "Gameboy",
+      "categoryId": 'other',
+      "img": "img/product_37.png",
+      "price": 255,
+      "originalPrice": 319,
+      "brand": "jellyfish",
+      "imgs": ["img/product_37.png","img/product_37.png"]
+  },
+  {
+      "id": "SKU0038",
+      "name": "Black Bike",
+      "categoryId": 'other',
+      "img": "img/product_38.png",
+      "price": 44,
+      "originalPrice": 55,
+      "brand": "jellyfish",
+      "imgs": ["img/product_38.png","img/product_38.png"]
+  },
+  {
+      "id": "SKU0039",
+      "name": "Blue Heals",
+      "categoryId": 'other',
+      "img": "img/product_39.png",
+      "price": 110,
+      "originalPrice": 138,
+      "brand": "jellyfish",
+      "imgs": ["img/product_39.png","img/product_39.png"]
+  },
+  {
+      "id": "SKU0040",
+      "name": "Pepsi",
+      "categoryId": 'other',
+      "img": "img/product_40.png",
+      "price": 271,
+      "originalPrice": 339,
+      "brand": "jellyfish",
+      "imgs": ["img/product_40.png","img/product_40.png"]
+  },
+  {
+      "id": "SKU0041",
+      "name": "Mouse",
+      "categoryId": 'other',
+      "img": "img/product_41.png",
+      "price": 480,
+      "originalPrice": 600,
+      "brand": "jellyfish",
+      "imgs": ["img/product_41.png","img/product_41.png"]
+  },
+  {
+      "id": "SKU0042",
+      "name": "Watch",
+      "categoryId": 'other',
+      "img": "img/product_42.png",
+      "price": 247,
+      "originalPrice": 309,
+      "brand": "jellyfish",
+      "imgs": ["img/product_42.png","img/product_42.png"]
+  },
+  {
+      "id": "SKU0043",
+      "name": "Two watches",
+      "categoryId": 'other',
+      "img": "img/product_43.png",
+      "price": 102,
+      "originalPrice": 128,
+      "brand": "jellyfish",
+      "imgs": ["img/product_43.png","img/product_43.png"]
+  },
+  {
+      "id": "SKU0044",
+      "name": "Three Doors",
+      "categoryId": 'other',
+      "img": "img/product_44.png",
+      "price": 187,
+      "originalPrice": 234,
+      "brand": "jellyfish",
+      "imgs": ["img/product_44.png","img/product_44.png"]
+  },
+  {
+      "id": "SKU0045",
+      "name": "Stool",
+      "categoryId": 'other',
+      "img": "img/product_45.png",
+      "price": 49,
+      "originalPrice": 62,
+      "brand": "jellyfish",
+      "imgs": ["img/product_45.png","img/product_45.png"]
+  },
+  {
+      "id": "SKU0046",
+      "name": "Poptop Drink Bottle",
+      "categoryId": 'other',
+      "img": "img/product_46.png",
+      "price": 117,
+      "originalPrice": 147,
+      "brand": "jellyfish",
+      "imgs": ["img/product_46.png","img/product_46.png"]
+  },
+  {
+      "id": "SKU0047",
+      "name": "Leaves",
+      "categoryId": 'other',
+      "img": "img/product_47.png",
+      "price": 74,
+      "originalPrice": 93,
+      "brand": "jellyfish",
+      "imgs": ["img/product_47.png","img/product_47.png"]
+  },
+  {
+      "id": "SKU0048",
+      "name": "Backpack",
+      "categoryId": 'other',
+      "img": "img/product_48.png",
+      "price": 142,
+      "originalPrice": 178,
+      "brand": "jellyfish",
+      "imgs": ["img/product_48.png","img/product_48.png"]
+  },
+  {
+      "id": "SKU0049",
+      "name": "Canada Dry",
+      "categoryId": 'other',
+      "img": "img/product_49.png",
+      "price": 37,
+      "originalPrice": 47,
+      "brand": "jellyfish",
+      "imgs": ["img/product_49.png","img/product_49.png"]
+  },
+  {
+      "id": "SKU0050",
+      "name": "Skin Care",
+      "categoryId": 'other',
+      "img": "img/product_50.png",
+      "price": 454,
+      "originalPrice": 568,
+      "brand": "jellyfish",
+      "imgs": ["img/product_50.png","img/product_50.png"]
+  }
   ],
   blog:{
     posts: [

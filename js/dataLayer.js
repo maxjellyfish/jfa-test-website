@@ -5,9 +5,8 @@ import db from "./db.js"
 import BaseDataHandler from "./dataHandlers/BaseDataHandler.class.js";
 import GtmGa4DataHandler from "./dataHandlers/GtmGa4DataHandler.class.js";
 import GtmCustomDataHandler from "./dataHandlers/GtmCustomDataHandler.class.js";
-import {sha256} from "./utils.js"
 
-(async function ($) {
+(function ($) {
     "use strict";
 
     window.dataLayer = window.dataLayer || []
@@ -153,7 +152,7 @@ import {sha256} from "./utils.js"
                 //"item_variant": "item_variant",
                 "price": cart[i].price,
                 "item_original_price" : cart[i].originalPrice,
-                "quantity": "quantity",
+                "quantity": 1,
                 "item_img" : cart[i].img
             });
             total += (cart[i].price * cart[i].qty);
@@ -406,10 +405,64 @@ import {sha256} from "./utils.js"
     $("#site-search-form").submit(function(event){
         
         var searchTerm = $(this).find("#search-term").val();
+        var itemList = [
+            {
+              index:0,
+              item_id:"shirts-1",
+              item_name: "Colourless Stylish Top",
+              item_list_name: "Search",
+              item_list_id: "search",
+              item_category: 'shirts',
+              img: "img/product-1.jpg",
+              price: 123,
+              quantity:1,
+              originalPrice: 150,
+              brand : 'jellyfish',
+              imgs: ["img/product-1.jpg", "img/product-1.jpg"]
+            },
+            {
+              index:1,
+              item_id:"bags-1",
+              item_name: "Wolf Face Bag",
+              item_list_name: "Search",
+              item_list_id: "search",
+              item_category: 'bags',
+              img: "img/product-2.jpg",
+              price: 234,
+              quantity:1,
+              originalPrice: 470,
+              brand : 'jellyfish',
+              imgs: ["img/product-2.jpg", "img/product-2.jpg"]
+            },
+            {
+              index:2,
+              item_id:"shoes-1",
+              item_name: "Merrell Shoes",
+              item_list_name: "Search",
+              item_list_id: "search",
+              item_category: 'shoes',
+              img: "img/product-3.jpg",
+              price: 80,
+              quantity:1,
+              originalPrice: 90,
+              brand : 'jellyfish',
+              imgs: ["img/product-3.jpg", "img/product-3.jpg"]
+            }
+        ];
+        var ecommerce = {};
+        ecommerce.items = itemList;
         var ob = createEventData("search");
         ob["search_term"] = searchTerm;
         ob["search_type"] = "site_search";
+        ob["ecommerce"] = ecommerce;
         track(ob);
+        var ab = createEventData("view_item_list");
+        ab["search_term"] = searchTerm;
+        ab["search_type"] = "site_search";
+        ab["item_list_name"] = "Search";
+        ab["item_list_id"] = "search";
+        ab["ecommerce"] = ecommerce;
+        track(ab);
         alert("user search submitted");
         event.preventDefault();
         return false;
@@ -698,7 +751,6 @@ import {sha256} from "./utils.js"
         ob.ecommerce.value = purchase.total;
         ob.ecommerce.tax = Math.round(purchase.total*.09);
         ob.ecommerce.shipping = purchase.shipping
-        ob.ecommerce.purchase_email_sha256 = await sha256(purchase.billing_email)
         ob.ecommerce.payment_type = purchase.payment_method;
         //ob.ecommerce.coupon = ""
         
