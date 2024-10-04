@@ -7,7 +7,7 @@ window.loadDomain = 'https://www.googletagmanager.com/';
 
 if(window.location.host == 'shop.iamthefear.com'){
   window.gtmId = 'GTM-T596F53';
-window.loadDomain = 'https://sgtm.iamthefear.com/';
+  window.loadDomain = 'https://run.iamthefear.com/';
 }
 
 if (window.params && typeof window.params.gtmId != 'undefined' && window.params.gtmId && window.params.gtmId != 'null') {
